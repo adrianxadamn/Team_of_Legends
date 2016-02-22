@@ -5,8 +5,40 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<nav>
+  <div class="navbar">
+    <ul class="navbar1">
+      <li>Home</li>
+      <% if current_user %>
+      <li>Profile</li>
+      <% end %>
+      <li>Users</li>
+      <li>Teams</li>
+      <li>Info</li>
+    </ul>
+    <ul class="navbar2">
+      <li> Team of Legends Logo </li>
+    </ul>
+    <ul class="navbar3">
+      <li>
+        <% if current_user %>
+          Welcome, <%= current_user.name %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Logout', session_path('dummy'), method: :delete %>
+        <% else %>
+          <%= link_to 'Login', login_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Sign Up', new_user_path %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</nav>
+
 
 <%= yield %>
 
