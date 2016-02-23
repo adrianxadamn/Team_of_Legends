@@ -3,6 +3,30 @@
 edit.html.erb
 <br>
 
+<div class ="container">
+    <div class= "column column-one">
+      <div class= "Header">
+        <h1>The User Info Goes Here</h1>
+      </div>
+      <div class="LoLLinks">
+        <h1>News</h1>
+          <li><a href="http://news.yahoo.com/">Yahoo! News</a></li>
+          <li><a href="http://www.huffingtonpost.com/">Huffington Post</a></li>
+          <li><a href="http://www.buzzfeed.com/news">BuzzFeed</a></li>
+          <li><a href="http://www.nytimes.com/">The New York Times</a></li>
+          <li><a href="http://www.latimes.com/">LA Times</a></li>
+          <li><a href="http://www.cnn.com/">CNN Network</a></li>
+          <li><a href="http://www.cbsnews.com/">CBS News</a></li>
+          <li><a href="http://www.usatoday.com/">USAToday</a></li>
+          <li><a href="http://elitedaily.com/">ELITEDAILY</a></li>
+          <li><a href="http://time.com/">TIME</a></li>
+          <li><a href="http://www.thedailybeast.com/">THE DAILY BEAST</a></li>
+      </div>
+    </div>
+
+    <div class= "column column-two">
+    <div class= "UserList">
+
 <h1>Update Account</h1>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -58,6 +82,29 @@ edit.html.erb
 
   <div class="actions"><%= f.submit "Update Account" %></div>
 <% end %>
+
+    </div>
+    </div>
+
+    <div class ="column column-three">
+      <div class="recentTeams">
+        <h1> Recent Teams Created </h1>
+        <div class="RecentTeam">
+        </div>
+      </div>
+      <div class="recentUsers">
+        <h1> Recent Users Joined </h1>
+      <% @users.each do |user| %>
+        <div class="RecentUser">
+        <li><b>User:</b> <%= user.name %> <br>
+        <b> Tier: </b> <%= user.tier_level %></li>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>
+
+
 
 
 

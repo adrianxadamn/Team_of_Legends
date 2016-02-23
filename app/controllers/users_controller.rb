@@ -11,7 +11,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @users = User.all
     @user = User.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -25,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @users = User.all
     @user = User.find(params[:id])
     if current_user != @user
       redirect_to root_path

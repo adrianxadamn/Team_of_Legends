@@ -9,7 +9,7 @@ Users/show.html.erb
       <div class= "Header">
         <h1>The User Info Goes Here</h1>
       </div>
-      <div class="NewsLinks">
+      <div class="LoLLinks">
         <h1>News</h1>
           <li><a href="http://news.yahoo.com/">Yahoo! News</a></li>
           <li><a href="http://www.huffingtonpost.com/">Huffington Post</a></li>
@@ -60,13 +60,19 @@ Users/show.html.erb
     </div>
 
     <div class ="column column-three">
-      <div class="recentTweets">
-
+      <div class="recentTeams">
+        <h1> Recent Teams Created </h1>
+        <div class="RecentTeam">
+        </div>
       </div>
-      <div class="info">
-        <li>&copy Team of Legends 2016</li>
-        <li>Developed By Adrian Nuyda</li>
-        <li>General Assembly WDI-DTLA 8</li>
+      <div class="recentUsers">
+        <h1> Recent Users Joined </h1>
+      <% @users.each do |user| %>
+        <div class="RecentUser">
+        <li><b>User:</b> <%= user.name %> <br>
+        <b> Tier: </b> <%= user.tier_level %></li>
+        </div>
+        <% end %>
       </div>
     </div>
 </div>

@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @users = User.all
+    @user = User.find(params[:id])
     @post = Post.find(params[:id])
 
   end

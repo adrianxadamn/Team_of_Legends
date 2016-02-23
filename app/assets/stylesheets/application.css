@@ -83,6 +83,67 @@ li {
   border-radius: 5px;
 }
 
-.column-one, .column-two, .column-three {
+.column-two {
   background-color: white;
+}
+.Header {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.LoLLinks {
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  padding-bottom:30px;
+}
+
+.LoLLinks li {
+  padding-top:10px;
+  padding-left:20px;
+  padding-botton:10px;
+}
+
+.LoLLinks a {
+  text-decoration: none;
+}
+
+.LoLLinks a:hover {
+  text-decoration: underline;
+}
+
+.LoLLinks h1 {
+  text-decoration: underline;
+  font-size: 30px;
+}
+
+.recentTeams {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.recentTeams h1 {
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.RecentTeam {
+  padding-top:5px;
+}
+
+.recentUsers {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.RecentUser {
+  padding-top: 5px;
 }
