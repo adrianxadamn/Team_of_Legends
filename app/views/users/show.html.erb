@@ -1,0 +1,36 @@
+<br>
+<br>
+Users/show.html.erb
+<br>
+<br>
+<div>
+  <b>User:</b> <%= @user.name %>
+</div>
+<div>
+  <b>Email: </b> <%= @user.email %>
+</div>
+<div>
+  <b>Native Language: </b><%= @user.native_language %>
+</div>
+<div>
+  <b>Role: </b> <%= @user.role %>
+</div>
+<div>
+  <b>Tier Level: </b> <%= @user.tier_level %>
+</div>
+<div>
+  <b> In-Game Name: </b> <%= @user.ign %>
+</div>
+<div>
+  <b>Description: </b> <%= @user.description %>
+</div>
+<div>
+  <b> DOB: </b> <%= @user.born_on %>
+</div>
+<% if current_user == @user %>
+  <%= link_to 'Edit Information', edit_user_path(@user) %>
+  <%= link_to "Delete Account", user_path, method: :delete, data:
+  {confirm: "Are you sure you want to delete your account?"} %>
+
+<% end %>
+

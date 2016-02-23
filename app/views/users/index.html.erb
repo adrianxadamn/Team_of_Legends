@@ -1,2 +1,22 @@
+/users/index.html.erb
+
 <p>Hello! Please Sign in or Login to get started.</p>
+
+<div>
+  <strong>
+  List of Users:
+  </strong>
+</div>
+
+<br>
+<% @users.each do |user| %>
+<div>
+<b>User:</b> <%= user.name %> | <b>Email: </b> <%= user.email %> |
+<b>Native Language: </b><%= user.native_language %> | <b>Role: </b> <%= user.role %> |
+<b>Tier Level: </b> <%= user.tier_level %> | <b> In-Game Name: </b> <%= user.ign %> |
+<b>Description: </b> <%= user.description %> | <b> DOB: </b> <%= user.born_on %>
+
+</div>
+<br>
+<% end %>
 

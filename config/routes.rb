@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 root 'users#index'
 
+resources :users, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
-resources :users, only: [:index, :new, :create]
+resources :sessions, only: [:new, :show, :create, :destroy, :edit ]
 
-resources :sessions, only: [:new, :create, :destroy]
-get '/login' => 'sessions#new'
+get '/login' => 'users#new'
+
+get '/users/:id/edit/' => 'sessions#edit'
 end

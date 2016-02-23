@@ -14,7 +14,9 @@
     <ul class="navbar1">
       <li>Home</li>
       <% if current_user %>
-      <li>Profile</li>
+      <li>
+      <%= link_to 'Profile', current_user %>
+      </li>
       <% end %>
       <li>Users</li>
       <li>Teams</li>
@@ -26,7 +28,7 @@
     <ul class="navbar3">
       <li>
         <% if current_user %>
-          Welcome, <%= current_user.name %>
+          Welcome, <%= current_user.ign %>
           &nbsp;&nbsp;|&nbsp;&nbsp;
           <%= link_to 'Logout', session_path('dummy'), method: :delete %>
         <% else %>
