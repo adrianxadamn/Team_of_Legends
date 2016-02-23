@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-root 'users#index'
+root 'homepage#index'
+get '/home' => 'homepage#index'
 
-resources :users, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+resources :users do
+  resources :posts, only: [:new, :create, :destroy]
+end
 
 resources :sessions, only: [:new, :show, :create, :destroy, :edit ]
 
-get '/login' => 'users#new'
+
+get '/login' => 'sessions#new'
 
 get '/users/:id/edit/' => 'sessions#edit'
 end

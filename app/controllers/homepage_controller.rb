@@ -1,6 +1,5 @@
-class UsersController < ApplicationController
-
-  def index
+class HomepageController < ApplicationController
+   def index
     @users = User.all
     @posts = Post.all
     @post = Post.new

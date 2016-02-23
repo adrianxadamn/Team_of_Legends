@@ -17,6 +17,10 @@
   margin: 0px;
  }
 
+ body {
+  background-color: gray;
+ }
+
 .navbar {
   display: flex;
   background-color: white;
@@ -53,4 +57,32 @@
 
 li {
   list-style: none;
+}
+
+.container {
+  display:flex;
+  margin: 10px 150px auto 150px;
+}
+
+.column-one {
+  flex: 1;
+  order: 1;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.column-two {
+  order: 2;
+  border-radius: 5px;
+  margin-right: 10px;
+  flex: 2;
+}
+
+.column-three {
+  order: 3;
+  border-radius: 5px;
+}
+
+.column-one, .column-two, .column-three {
+  background-color: white;
 }

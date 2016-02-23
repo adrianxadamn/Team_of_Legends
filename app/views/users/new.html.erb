@@ -1,16 +1,57 @@
 users/new.html.erb
 
-<h1>Login</h1>
-<p id="alert"><%= alert %></p>
-<%= form_tag sessions_path do %>
+<h1>Sign Up</h1>
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
   </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
-<% end %>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Password Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :native_language, "Native Language" %>
+    <%= f.text_field :native_language %>
+  </div>
+  <div class="field">
+    <%= f.label :role %>
+    <%= f.text_field :role %>
+  </div>
+  <div class="field">
+    <%= f.label :tier_level %>
+    <%= f.text_field :tier_level %>
+  </div>
+  <div class="field">
+    <%= f.label :ign, "In-Game Name" %>
+    <%= f.text_field :ign %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :born_on, "DOB" %>
+    <%= f.date_select :born_on, order: [:month, :day, :year], :start_year => 1970 %>
+  </div>
 
+  <div class="actions"><%= f.submit "Create Account" %></div>
+<% end %>

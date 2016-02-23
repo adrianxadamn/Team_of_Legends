@@ -1,4 +1,4 @@
-/users/index.html.erb
+/homepage/index.html.erb
 
 <p>Hello! Please Sign in or Login to get started.</p>
 
@@ -24,21 +24,32 @@
     </div>
 
     <div class= "column column-two">
-    <div class= "UserList">
-      <h3>List of Users: </h3>
-<br>
-<% @users.each do |user| %>
-<div>
-<b>User:</b> <%= user.name %> | <b>Email: </b> <%= user.email %> |
-<b>Native Language: </b><%= user.native_language %> | <b>Role: </b> <%= user.role %> |
-<b>Tier Level: </b> <%= user.tier_level %> | <b> In-Game Name: </b> <%= user.ign %> |
-<b>Description: </b> <%= user.description %> | <b> DOB: </b> <%= user.born_on %>
+     <% if current_user %>
+      <div class="PostBox">
+        <h3><u> Create a Post! </u></h3>
+        <%= form_for @post, url: user_posts_path(current_user.id) do |f| %>
+        <div class="NameAndImage">
+        <strong>
+        <%= f.label current_user.ign %> :
+        </strong>
+        </div>
 
-</div>
-<br>
-<% end %>
-
-    </div>
+        <div class="Text">
+          <div>
+              <%= f.text_area :content, size: "67x5", :maxlength =>140, :placeholder => "Enter Text Here. (Max characters is 140)." %>
+          </div>
+        </div>
+        <%= f.submit "Post" %>
+        <% end %>
+      </div>
+       <% end %>
+      <div class="PostList">
+        <% @posts.each do |post| %>
+        <div class="Post">
+          <strong> <%= post.user.name %> </strong> - <%= post.content %>
+        </div>
+        <% end %>
+      </div>
     </div>
 
     <div class ="column column-three">

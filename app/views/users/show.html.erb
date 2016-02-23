@@ -3,34 +3,72 @@
 Users/show.html.erb
 <br>
 <br>
-<div>
-  <b>User:</b> <%= @user.name %>
-</div>
-<div>
-  <b>Email: </b> <%= @user.email %>
-</div>
-<div>
-  <b>Native Language: </b><%= @user.native_language %>
-</div>
-<div>
-  <b>Role: </b> <%= @user.role %>
-</div>
-<div>
-  <b>Tier Level: </b> <%= @user.tier_level %>
-</div>
-<div>
-  <b> In-Game Name: </b> <%= @user.ign %>
-</div>
-<div>
-  <b>Description: </b> <%= @user.description %>
-</div>
-<div>
-  <b> DOB: </b> <%= @user.born_on %>
-</div>
-<% if current_user == @user %>
-  <%= link_to 'Edit Information', edit_user_path(@user) %>
-  <%= link_to "Delete Account", user_path, method: :delete, data:
-  {confirm: "Are you sure you want to delete your account?"} %>
 
-<% end %>
+<div class ="container">
+    <div class= "column column-one">
+      <div class= "Header">
+        <h1>The User Info Goes Here</h1>
+      </div>
+      <div class="NewsLinks">
+        <h1>News</h1>
+          <li><a href="http://news.yahoo.com/">Yahoo! News</a></li>
+          <li><a href="http://www.huffingtonpost.com/">Huffington Post</a></li>
+          <li><a href="http://www.buzzfeed.com/news">BuzzFeed</a></li>
+          <li><a href="http://www.nytimes.com/">The New York Times</a></li>
+          <li><a href="http://www.latimes.com/">LA Times</a></li>
+          <li><a href="http://www.cnn.com/">CNN Network</a></li>
+          <li><a href="http://www.cbsnews.com/">CBS News</a></li>
+          <li><a href="http://www.usatoday.com/">USAToday</a></li>
+          <li><a href="http://elitedaily.com/">ELITEDAILY</a></li>
+          <li><a href="http://time.com/">TIME</a></li>
+          <li><a href="http://www.thedailybeast.com/">THE DAILY BEAST</a></li>
+      </div>
+    </div>
+
+    <div class= "column column-two">
+      <div class="UserInfo">
+        <div>
+          <b>User:</b> <%= @user.name %>
+        </div>
+        <div>
+          <b>Email: </b> <%= @user.email %>
+        </div>
+        <div>
+          <b>Native Language: </b><%= @user.native_language %>
+        </div>
+        <div>
+          <b>Role: </b> <%= @user.role %>
+        </div>
+        <div>
+          <b>Tier Level: </b> <%= @user.tier_level %>
+        </div>
+        <div>
+          <b> In-Game Name: </b> <%= @user.ign %>
+        </div>
+        <div>
+          <b>Description: </b> <%= @user.description %>
+        </div>
+        <div>
+          <b> DOB: </b> <%= @user.born_on %>
+        </div>
+          <% if current_user == @user %>
+            <%= link_to 'Edit Information', edit_user_path(@user) %>
+            <%= link_to "Delete Account", user_path, method: :delete, data:
+            {confirm: "Are you sure you want to delete your account?"} %>
+          <% end %>
+      </div>
+    </div>
+
+    <div class ="column column-three">
+      <div class="recentTweets">
+
+      </div>
+      <div class="info">
+        <li>&copy Team of Legends 2016</li>
+        <li>Developed By Adrian Nuyda</li>
+        <li>General Assembly WDI-DTLA 8</li>
+      </div>
+    </div>
+</div>
+
 
