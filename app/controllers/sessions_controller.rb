@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
   def new
+    @users = User.all
+    @user = User.new
+    @recentUsers = User.order('created_at DESC').limit(5)
   end
 
   def show

@@ -1,15 +1,67 @@
-sessions/new.html.erb
+<div class ="container">
+    <div class= "column column-one">
+      <div class= "Header">
+        <h1>The User Info Goes Here</h1>
+      </div>
+      <div class="LoLLinks">
+        <h1>News</h1>
+          <li><a href="http://news.yahoo.com/">Yahoo! News</a></li>
+          <li><a href="http://www.huffingtonpost.com/">Huffington Post</a></li>
+          <li><a href="http://www.buzzfeed.com/news">BuzzFeed</a></li>
+          <li><a href="http://www.nytimes.com/">The New York Times</a></li>
+          <li><a href="http://www.latimes.com/">LA Times</a></li>
+          <li><a href="http://www.cnn.com/">CNN Network</a></li>
+          <li><a href="http://www.cbsnews.com/">CBS News</a></li>
+          <li><a href="http://www.usatoday.com/">USAToday</a></li>
+          <li><a href="http://elitedaily.com/">ELITEDAILY</a></li>
+          <li><a href="http://time.com/">TIME</a></li>
+          <li><a href="http://www.thedailybeast.com/">THE DAILY BEAST</a></li>
+      </div>
+    </div>
 
-<h1>Login</h1>
-<p id="alert"><%= alert %></p>
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
-<% end %>
+    <div class= "column column-two">
+      <div class="UserInfo">
+        <h1>Login</h1>
+        <p id="alert"><%= alert %></p>
+        <%= form_tag sessions_path do %>
+          <div class="field">
+            <%= label_tag :email %>
+            <%= text_field_tag :email, params[:email] %>
+          </div>
+          <div class="field">
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+          </div>
+          <div class="actions"><%= submit_tag "Log in" %></div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class ="column column-three">
+      <div class="recentTeams">
+        <h1>Recent Teams Created</h1>
+
+      </div>
+      <div class="recentUsers">
+        <h1> Recent Users Created </h1>
+      <% @recentUsers.each do |user| %>
+        <div class="RecentUser">
+          <div class="PictureLeft">
+            <%= image_tag user.profile_image, :size => "70x70" %>
+          </div>
+          <div class="QuickInfo">
+            <li>
+              <b>User:</b> <%= user.name %> <br>
+              <b> IGN: </b> <%= user.ign %> <br>
+              <b> Role: </b> <%= user.role %> <br>
+              <b> Tier: </b> <%= user.tier_level %>
+            </li>
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>
+
+

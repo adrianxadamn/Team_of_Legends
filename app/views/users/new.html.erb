@@ -22,69 +22,69 @@
     <div class= "column column-two">
       <div class="UserInfo">
         <h1>Sign Up</h1>
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
+        <%= form_for @user do |f| %>
+          <% if @user.errors.any? %>
+            <div class="error_messages">
+              <h2>Form is invalid</h2>
+              <ul>
+                <% for message in @user.errors.full_messages %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field">
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+          </div>
+          <div class="field">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+          </div>
+          <div class="field">
+            <%= f.label :password_confirmation, "Password Confirmation" %>
+            <%= f.password_field :password_confirmation %>
+          </div>
+          <div class="field">
+            <%= f.label :native_language, "Native Language" %>
+            <%= f.text_field :native_language %>
+          </div>
+          <div class="field">
+            <%= f.label :location %>
+            <%= f.text_field :location %>
+          </div>
+
+          <div class="field">
+            <%= f.label :role %>
+            <%= f.select :role, options_for_select(["Top", "Jungle", "Mid", "ADC", "Support"]) %>
+          </div>
+          <div class="field">
+            <%= f.label :tier_level %>
+            <%= f.select :tier_level, options_for_select(["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Challenger"]) %>
+          </div>
+          <div class="field">
+            <%= f.label :ign, "In-Game Name" %>
+            <%= f.text_field :ign %>
+          </div>
+          <div class="field">
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+          </div>
+          <div class="field">
+            <%= f.label :born_on, "DOB" %>
+            <%= f.date_select :born_on, order: [:month, :day, :year], :start_year => 1970 %>
+          </div>
+          <div class="field">
+            <%= f.label :profile_image, "Profile Image (Insert Url Link)" %>
+            <%= f.text_field :profile_image %>
+          </div>
+
+          <div class="actions"><%= f.submit "Create Account" %></div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation, "Password Confirmation" %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="field">
-    <%= f.label :native_language, "Native Language" %>
-    <%= f.text_field :native_language %>
-  </div>
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= f.label :role %>
-    <%= f.select :role, options_for_select(["Top", "Jungle", "Mid", "ADC", "Support"]) %>
-  </div>
-  <div class="field">
-    <%= f.label :tier_level %>
-    <%= f.select :tier_level, options_for_select(["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Challenger"]) %>
-  </div>
-  <div class="field">
-    <%= f.label :ign, "In-Game Name" %>
-    <%= f.text_field :ign %>
-  </div>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :born_on, "DOB" %>
-    <%= f.date_select :born_on, order: [:month, :day, :year], :start_year => 1970 %>
-  </div>
-  <div class="field">
-    <%= f.label :profile_image, "Profile Image (Insert Url Link)" %>
-    <%= f.text_field :profile_image %>
-  </div>
-
-  <div class="actions"><%= f.submit "Create Account" %></div>
-<% end %>
 
       </div>
     </div>
