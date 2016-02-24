@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 root 'homepage#index'
 get '/home' => 'homepage#index'
 
+
+
 resources :users do
-  resources :posts, only: [:new, :create, :destroy, :show, :edit]
+  resources :posts, only: [:index, :new, :create, :destroy, :show, :edit]
 end
 
 resources :sessions, only: [:new, :show, :create, :destroy, :edit ]

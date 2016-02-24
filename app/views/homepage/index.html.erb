@@ -47,6 +47,9 @@
           <strong> <%= post.user.name %> </strong> - <%= post.content %>
         </div>
 
+            <%= link_to 'View Post', user_path(post[:user_id]) %>
+
+
         </div>
         <% end %>
       </div>
