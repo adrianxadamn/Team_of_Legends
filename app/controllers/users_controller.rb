@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @users = User.all.order('created_at DESC')
     @posts = Post.all
     @post = Post.new
     @recentUsers = User.order('created_at DESC').limit(10)
