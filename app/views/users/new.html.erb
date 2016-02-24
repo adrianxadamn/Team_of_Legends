@@ -60,7 +60,7 @@
 
   <div class="field">
     <%= f.label :role %>
-    <%= select_tag :role, options_for_select(["Top", "Jungle", "Mid", "ADC", "Support"]) %>
+    <%= f.select :role, options_for_select(["Top", "Jungle", "Mid", "ADC", "Support"]) %>
   </div>
   <div class="field">
     <%= f.label :tier_level %>
@@ -95,7 +95,7 @@
 
       </div>
       <div class="recentUsers">
-        <h1> Recent Active Users </h1>
+        <h1> Recent Users Created </h1>
       <% @recentUsers.each do |user| %>
         <div class="RecentUser">
           <div class="PictureLeft">

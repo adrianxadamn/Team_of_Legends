@@ -4,24 +4,25 @@ class UsersController < ApplicationController
     @users = User.all.order('created_at DESC')
     @posts = Post.all
     @post = Post.new
-    @recentUsers = User.order('created_at DESC').limit(10)
+    @recentUsers = User.order('created_at DESC').limit(5)
   end
 
   def new
     @users = User.all
     @user = User.new
-    @recentUsers = User.order('created_at DESC').limit(10)
+    @recentUsers = User.order('created_at DESC').limit(5)
   end
 
   def show
     @users = User.all
     @user = User.find(params[:id])
-    @recentUsers = User.order('created_at DESC').limit(10)
+    @recentUsers = User.order('created_at DESC').limit(5)
     # @post = Post.find(params[:id])
   end
 
   def create
     @users = User.all
+    @recentUsers = User.order('created_at DESC').limit(5)
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "You have successfully signed up!"

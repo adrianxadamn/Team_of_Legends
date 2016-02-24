@@ -24,29 +24,29 @@
     <div class= "column column-two">
       <div class= "UserList">
         <h3>List of Users: </h3> <br>
-      <% @users.each do |user| %>
-      <div class="RecentUser">
-        <div class="PictureLeft">
-        <%= image_tag user.profile_image, :size => "70x70" %>
+        <% @users.each do |user| %>
+        <div class="RecentUser">
+          <div class="PictureLeft">
+          <%= image_tag user.profile_image, :size => "70x70" %>
+          </div>
+          <div class="QuickInfo">
+            <li>
+              <b>User:</b> <%= link_to user.name, user_path(user[:id]) %> <br>
+              <b>IGN: </b> <%= user.ign %> <br>
+              <b>Role: </b> <%= user.role %> <br>
+              <b>Tier: </b> <%= user.tier_level %>
+            </li>
+          </div>
+          <div class="QuickInfoRight">
+            <li>
+              <b>Email: </b> <%= user.email %> <br>
+              <b>Language: </b> <%= user.native_language %> <br>
+              <b>Location: </b> <%= user.location %> <br>
+              <b>Team: </b>
+            </li>
+          </div>
         </div>
-        <div class="QuickInfo">
-          <li>
-            <b>User:</b> <%= user.name %> <br>
-            <b>IGN: </b> <%= user.ign %> <br>
-            <b>Role: </b> <%= user.role %> <br>
-            <b>Tier: </b> <%= user.tier_level %>
-          </li>
-        </div>
-        <div class="QuickInfoRight">
-          <li>
-            <b>Email: </b> <%= user.email %> <br>
-            <b>Language: </b> <%= user.native_language %> <br>
-            <b>Location: </b> <%= user.location %> <br>
-            <b>Team: </b>
-          </li>
-        </div>
-      </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
 
@@ -55,7 +55,7 @@
         <h1>Recent Teams Created</h1>
       </div>
       <div class="recentUsers">
-        <h1> Recent Active Users </h1>
+        <h1> Recent Users Created </h1>
       <% @recentUsers.each do |user| %>
         <div class="RecentUser">
           <div class="PictureLeft">
