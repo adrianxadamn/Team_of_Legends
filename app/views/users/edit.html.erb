@@ -1,8 +1,3 @@
-
-<br>
-edit.html.erb
-<br>
-
 <div class ="container">
     <div class= "column column-one">
       <div class= "Header">
@@ -101,7 +96,7 @@ edit.html.erb
       </div>
       <div class="recentUsers">
         <h1> Recent Active Users </h1>
-      <% @users.each do |user| %>
+      <% @recentUsers.each do |user| %>
         <div class="RecentUser">
           <div class="PictureLeft">
             <%= image_tag user.profile_image, :size => "70x70" %>

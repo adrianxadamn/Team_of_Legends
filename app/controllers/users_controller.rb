@@ -4,16 +4,19 @@ class UsersController < ApplicationController
     @users = User.all
     @posts = Post.all
     @post = Post.new
+    @recentUsers = User.order('created_at DESC').limit(10)
   end
 
   def new
     @users = User.all
     @user = User.new
+    @recentUsers = User.order('created_at DESC').limit(10)
   end
 
   def show
     @users = User.all
     @user = User.find(params[:id])
+    @recentUsers = User.order('created_at DESC').limit(10)
     # @post = Post.find(params[:id])
   end
 
@@ -29,6 +32,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @recentUsers = User.order('created_at DESC').limit(10)
     @users = User.all
     @user = User.find(params[:id])
     if current_user != @user

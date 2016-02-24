@@ -18,7 +18,8 @@
  }
 
  body {
-  background-color: gray;
+  background: url("/assets/wallpaper.jpg");
+  background-size: 100%;
  }
 
 .navbar {
@@ -157,4 +158,8 @@ li {
 
 .PictureLeft, .QuickInfo {
   display:inline-block;
+}
+
+.Header {
+  padding: 10px;
 }

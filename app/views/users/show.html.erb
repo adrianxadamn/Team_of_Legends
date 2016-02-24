@@ -1,14 +1,19 @@
-<br>
-<br>
-Users/show.html.erb
-<br>
-<br>
-
 <div class ="container">
     <div class= "column column-one">
       <div class= "Header">
-        <h1>The User Info Goes Here</h1>
+        <div class="PictureLeft">
+        <%= image_tag @user.profile_image, :size => "70x70" %>
+        </div>
+        <div class="QuickInfo">
+          <li>
+            <b>User:</b> <%= @user.name %> <br>
+            <b> IGN: </b> <%= @user.ign %> <br>
+            <b> Role: </b> <%= @user.role %> <br>
+            <b> Tier: </b> <%= @user.tier_level %>
+          </li>
+        </div>
       </div>
+
       <div class="LoLLinks">
         <h1>News</h1>
           <li><a href="http://news.yahoo.com/">Yahoo! News</a></li>
@@ -49,13 +54,10 @@ Users/show.html.erb
           <b> In-Game Name: </b> <%= @user.ign %>
         </div>
         <div>
-          <b>Description: </b> <%= @user.description %>
-        </div>
-        <div>
           <b> DOB: </b> <%= @user.born_on %>
         </div>
         <div>
-          <%= image_tag @user.profile_image %>
+          <b>Description: </b> <%= @user.description %>
         </div>
           <% if current_user == @user %>
             <%= link_to 'Edit Information', edit_user_path(@user) %>
@@ -72,7 +74,7 @@ Users/show.html.erb
       </div>
       <div class="recentUsers">
         <h1> Recent Active Users </h1>
-      <% @users.each do |user| %>
+      <% @recentUsers.each do |user| %>
         <div class="RecentUser">
           <div class="PictureLeft">
             <%= image_tag user.profile_image, :size => "70x70" %>

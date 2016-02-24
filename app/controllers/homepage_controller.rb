@@ -3,14 +3,17 @@ class HomepageController < ApplicationController
     @users = User.all
     @posts = Post.all
     @post = Post.new
+    @recentUsers = User.order('created_at DESC').limit(10)
   end
 
   def new
     @user = User.new
+    @recentUsers = User.order('created_at DESC').limit(10)
   end
 
   def show
     @user = User.find(params[:id])
+    @recentUsers = User.order('created_at DESC').limit(10)
   end
 
   def create
