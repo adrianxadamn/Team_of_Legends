@@ -37,6 +37,9 @@ Users/show.html.erb
           <b>Native Language: </b><%= @user.native_language %>
         </div>
         <div>
+          <b>Location: </b> <%= @user.location %>
+        </div>
+        <div>
           <b>Role: </b> <%= @user.role %>
         </div>
         <div>
@@ -66,10 +69,11 @@ Users/show.html.erb
         </div>
       </div>
       <div class="recentUsers">
-        <h1> Recent Users Joined </h1>
+        <h1> Recent Active Users </h1>
       <% @users.each do |user| %>
         <div class="RecentUser">
         <li><b>User:</b> <%= user.name %> <br>
+        <b> Role: </b> <%= user.role %> <br>
         <b> Tier: </b> <%= user.tier_level %></li>
         </div>
         <% end %>

@@ -60,12 +60,16 @@ edit.html.erb
     <%= f.text_field :native_language %>
   </div>
   <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
     <%= f.label :role %>
-    <%= f.text_field :role %>
+    <%= f.select :role, options_for_select(["Top", "Jungle", "Mid", "ADC", "Support"]) %>
   </div>
   <div class="field">
     <%= f.label :tier_level %>
-    <%= f.text_field :tier_level %>
+    <%= f.select :tier_level, options_for_select(["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Challenger"]) %>
   </div>
   <div class="field">
     <%= f.label :ign, "In-Game Name" %>
@@ -93,10 +97,11 @@ edit.html.erb
         </div>
       </div>
       <div class="recentUsers">
-        <h1> Recent Users Joined </h1>
+        <h1> Recent Active Users </h1>
       <% @users.each do |user| %>
         <div class="RecentUser">
         <li><b>User:</b> <%= user.name %> <br>
+        <b> Role: </b> <%= user.role %> <br>
         <b> Tier: </b> <%= user.tier_level %></li>
         </div>
         <% end %>

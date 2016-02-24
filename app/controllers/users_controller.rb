@@ -7,16 +7,18 @@ class UsersController < ApplicationController
   end
 
   def new
+    @users = User.all
     @user = User.new
   end
 
   def show
     @users = User.all
     @user = User.find(params[:id])
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
   end
 
   def create
+    @users = User.all
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "You have successfully signed up!"
@@ -36,9 +38,9 @@ class UsersController < ApplicationController
 
 
   def update
+    @users = User.all
     @user = User.find(params[:id])
-    if current_user == @user
-      @user.update_attributes(params.require(:user).permit(
+     if @user.update_attributes(params.require(:user).permit(
         :name,
         :email,
         :password,
@@ -52,12 +54,10 @@ class UsersController < ApplicationController
         :location,
         :profile_image,
         :description
-        ))
+    ))
       redirect_to current_user
     else
-
-      redirect_to root_path
-
+      render :edit
     end
   end
 

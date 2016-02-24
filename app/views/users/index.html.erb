@@ -48,10 +48,11 @@
         </div>
       </div>
       <div class="recentUsers">
-        <h1> Recent Users Joined </h1>
+        <h1> Recent Active Users </h1>
       <% @users.each do |user| %>
         <div class="RecentUser">
         <li><b>User:</b> <%= user.name %> <br>
+        <b> Role: </b> <%= user.role %> <br>
         <b> Tier: </b> <%= user.tier_level %></li>
         </div>
         <% end %>

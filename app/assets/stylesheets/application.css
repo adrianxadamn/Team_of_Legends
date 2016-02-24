@@ -147,3 +147,10 @@ li {
 .RecentUser {
   padding-top: 5px;
 }
+
+.UserList, .UserInfo {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 35px;
+  background-color: white;
+}
