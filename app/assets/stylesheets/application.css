@@ -84,9 +84,6 @@ li {
   border-radius: 5px;
 }
 
-.column-two {
-  background-color: white;
-}
 .Header {
   border: 1px solid black;
   border-radius: 5px;
@@ -164,7 +161,7 @@ li {
   padding: 10px;
 }
 
-.PostList {
+.PostList, .PostBox {
   background-color: white;
   border-radius:5px;
 }
@@ -173,6 +170,7 @@ li {
   border: 1px solid black;
   border-radius:5px;
   padding: 10px;
+  background-color: white;
 }
 
 .PostImageLeft {
@@ -184,3 +182,10 @@ li {
   vertical-align: top;
 }
 
+/*.column-two {
+  background-color: white;
+}*/
+/*
+.PostBox {
+  background-color: white;
+}*/

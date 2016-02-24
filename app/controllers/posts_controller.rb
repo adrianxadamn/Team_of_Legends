@@ -8,7 +8,6 @@ class PostsController < ApplicationController
     @user = User.find(params[:id])
     @post = Post.find(params[:id])
     @recentUsers = User.order('created_at DESC').limit(5)
-
   end
 
   def new
@@ -25,6 +24,16 @@ class PostsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+    @recentUsers = User.order('created_at DESC').limit(5)
+    @users = User.all
+    @user = User.find(params[:id])
+    if current_user != @user
+      redirect_to root_path
     end
   end
 

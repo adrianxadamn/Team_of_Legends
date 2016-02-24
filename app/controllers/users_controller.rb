@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @recentUsers = User.order('created_at DESC').limit(10)
+    @recentUsers = User.order('created_at DESC').limit(5)
     @users = User.all
     @user = User.find(params[:id])
     if current_user != @user

@@ -17,7 +17,11 @@
     </div>
 
     <div class= "column column-two">
-     <% if current_user %>
+    <div class= "UserList">
+
+<h1>Edit Post</h1>
+
+<% if current_user %>
       <div class="PostBox">
         Create a Post!
         <%= form_for @post, url: user_posts_path(current_user.id) do |f| %>
@@ -37,19 +41,11 @@
       </div>
 
        <% end %>
-      <div class="PostList">
-        <% @posts.each do |post| %>
-        <div class="Post">
-          <div class="PostImageLeft">
-        <%= image_tag post.user.profile_image, :size => "70x70" %>
-          </div>
-          <div class="PostContentRight">
-          <strong> <%= post.user.name %> </strong> - <%= post.content %>
-        </div>
 
-        </div>
-        <% end %>
-      </div>
+
+
+
+    </div>
     </div>
 
     <div class ="column column-three">
@@ -77,7 +73,6 @@
         <% end %>
       </div>
     </div>
+
 </div>
-
-
 
