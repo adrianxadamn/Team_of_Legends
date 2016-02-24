@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 root 'homepage#index'
 get '/home' => 'homepage#index'
 
+resources :teams
 
 
 resources :users do

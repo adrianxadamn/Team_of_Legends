@@ -1,1 +1,58 @@
-index.html.erb
+<div class ="container">
+    <div class= "column column-one">
+      <div class= "Header">
+        <h1>The User Info Goes Here</h1>
+      </div>
+      <div class="LoLLinks">
+        <h1>Related Links</h1>
+          <li><a href="http://www.lolesports.com/en_US/">LoL eSports</a></li>
+          <li><a href="http://www.thescoreesports.com/top_news">The Score eSports</a></li>
+          <li><a href="http://www.lolking.net/">LOLKING</a></li>
+          <li><a href="http://www.mobafire.com/">Moba Fire</a></li>
+          <li><a href="http://www.solomid.net/">SoloMid</a></li>
+          <li><a href="http://www.lolnexus.com/">LoL Nexus</a></li>
+          <li><a href="http://espn.go.com/esports/">ESPN eSports</a></li>
+          <li><a href="http://www.dailydot.com/topics/esports/">The Daily Dot</a></li>
+      </div>
+    </div>
+
+    <div class= "column column-two">
+      <div class= "UserList">
+
+<% @posts.each do |post| %>
+
+<%= post.content %> <%= post.user.name %>
+
+<% end %>
+
+      </div>
+    </div>
+
+    <div class ="column column-three">
+      <div class="recentTeams">
+        <h1>Recent Teams Created</h1>
+      </div>
+      <div class="recentUsers">
+        <h1> Recent Users Created </h1>
+      <% @recentUsers.each do |user| %>
+        <div class="RecentUser">
+          <div class="PictureLeft">
+            <%= image_tag user.profile_image, :size => "70x70" %>
+          </div>
+          <div class="QuickInfo">
+            <li>
+              <b>User:</b> <%= link_to user.name, user_path(user[:id]) %> <br>
+              <b> IGN: </b> <%= user.ign %> <br>
+              <b> Role: </b> <%= user.role %> <br>
+              <b> Tier: </b> <%= user.tier_level %>
+            </li>
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>
+
+
+

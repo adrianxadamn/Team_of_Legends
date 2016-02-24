@@ -37,11 +37,11 @@
           <strong> <%= @post.user.name %> </strong> - <%= @post.content %>
           </div>
           <div>
-            <% if current_user == @user %>
+
             <%= link_to 'Edit Post', edit_user_post_path %>
             <%= link_to "Delete Post", user_post_path, method: :delete, data:
             {confirm: "Are you sure you want to delete your post?"} %>
-          <% end %>
+
           </div>
         </div>
         </div>

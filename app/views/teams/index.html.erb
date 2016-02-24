@@ -1,0 +1,108 @@
+<div class ="container">
+    <div class= "column column-one">
+      <div class= "Header">
+        <h1>The User Info Goes Here</h1>
+      </div>
+      <div class="LoLLinks">
+        <h1>Related Links</h1>
+          <li><a href="http://www.lolesports.com/en_US/">LoL eSports</a></li>
+          <li><a href="http://www.thescoreesports.com/top_news">The Score eSports</a></li>
+          <li><a href="http://www.lolking.net/">LOLKING</a></li>
+          <li><a href="http://www.mobafire.com/">Moba Fire</a></li>
+          <li><a href="http://www.solomid.net/">SoloMid</a></li>
+          <li><a href="http://www.lolnexus.com/">LoL Nexus</a></li>
+          <li><a href="http://espn.go.com/esports/">ESPN eSports</a></li>
+          <li><a href="http://www.dailydot.com/topics/esports/">The Daily Dot</a></li>
+      </div>
+    </div>
+
+    <div class= "column column-two">
+      <div class= "PostBox">
+        <h3>Create a Team: </h3> <br>
+          <%= form_for @team do |f| %>
+          <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field">
+            <%= f.label :team_abbreviation %>
+            <%= f.text_field :team_abbreviation %>
+          </div>
+          <div class="field">
+            <%= f.label :location %>
+            <%= f.text_field :location %>
+          </div>
+          <div class="field">
+            <%= f.label :native_language, "Native Language" %>
+            <%= f.text_field :native_language %>
+          </div>
+          <div class="field">
+            <%= f.label :members %>
+            <%= f.text_field :members %>
+          </div>
+          <div class="field">
+            <%= f.label :owner %>
+            <%= f.text_field :owner %>
+          </div>
+          <div class="field">
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+          </div>
+          <div class="field">
+            <%= f.label :established_on, "Est." %>
+            <%= f.date_select :established_on, order: [:month, :day, :year], :start_year => 1970 %>
+          </div>
+          <div class="field">
+            <%= f.label :team_image, "Team Image (Insert Url Link)" %>
+            <%= f.text_field :team_image %>
+          </div>
+
+          <div class="actions"><%= f.submit "Create Team" %></div>
+          <% end %>
+      </div>
+      <div class="UserList">
+        <h3> List of Teams: </h3><br>
+        <% @teams.each do |team| %>
+        <div class="RecentUser">
+          <div class="PictureLeft">
+          <%= image_tag team.team_image, :size => "70x70" %>
+          </div>
+          <div class="QuickInfo">
+            <li>
+              <b> Team: </b><%= team.name %> <br>
+              <b> Owner: </b><%= team.owner %> <br>
+              <b> Location: </b><%= team.location %> <br>
+              <b> Language: </b><%= team.native_language %>
+            </li>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class ="column column-three">
+      <div class="recentTeams">
+        <h1>Recent Teams Created</h1>
+      </div>
+      <div class="recentUsers">
+        <h1> Recent Users Created </h1>
+      <% @recentUsers.each do |user| %>
+        <div class="RecentUser">
+          <div class="PictureLeft">
+            <%= image_tag user.profile_image, :size => "70x70" %>
+          </div>
+          <div class="QuickInfo">
+            <li>
+              <b>User:</b> <%= link_to user.name, user_path(user[:id]) %> <br>
+              <b> IGN: </b> <%= user.ign %> <br>
+              <b> Role: </b> <%= user.role %> <br>
+              <b> Tier: </b> <%= user.tier_level %>
+            </li>
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>

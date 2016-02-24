@@ -1,10 +1,10 @@
 class HomepageController < ApplicationController
-   def index
+  def index
     @users = User.all
-    # @posts = current_user.posts
     @posts = Post.all.order('created_at DESC')
     @post = Post.new
     @recentUsers = User.order('created_at DESC').limit(5)
+
   end
 
   def new

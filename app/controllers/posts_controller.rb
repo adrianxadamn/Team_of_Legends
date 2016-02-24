@@ -1,11 +1,14 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @users = User.all.order('created_at DESC')
+    @posts = Post.find(params[:id])
+    @post = Post.new
+    @recentUsers = User.order('created_at DESC').limit(5)
   end
 
   def show
     @users = User.all
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @recentUsers = User.order('created_at DESC').limit(5)
   end
@@ -31,10 +34,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @recentUsers = User.order('created_at DESC').limit(5)
     @users = User.all
-    @user = User.find(params[:id])
-    if current_user != @user
-      redirect_to root_path
-    end
+    @user = User.find(params[:user_id])
+    # if current_user != @user
+    #   redirect_to root_path
+    # end
   end
 
 
