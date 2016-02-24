@@ -4,7 +4,7 @@
         <h1>The User Info Goes Here</h1>
       </div>
       <div class="LoLLinks">
-        <h1>News</h1>
+        <h1>Related Links</h1>
           <li><a href="http://www.lolesports.com/en_US/">LoL eSports</a></li>
           <li><a href="http://www.thescoreesports.com/top_news">The Score eSports</a></li>
           <li><a href="http://www.lolking.net/">LOLKING</a></li>
@@ -39,7 +39,12 @@
       <div class="PostList">
         <% @posts.each do |post| %>
         <div class="Post">
+          <div class="PostImageLeft">
+        <%= image_tag post.user.profile_image, :size => "70x70" %>
+          </div>
+          <div class="PostContentRight">
           <strong> <%= post.user.name %> </strong> - <%= post.content %>
+        </div>
         </div>
         <% end %>
       </div>

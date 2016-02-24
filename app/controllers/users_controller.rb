@@ -16,6 +16,8 @@ class UsersController < ApplicationController
   def show
     @users = User.all
     @user = User.find(params[:id])
+    @posts = Post.all
+    @post = User.find(params[:id]).posts
     @recentUsers = User.order('created_at DESC').limit(5)
     # @post = Post.find(params[:id])
   end
