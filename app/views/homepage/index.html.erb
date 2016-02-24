@@ -5,17 +5,14 @@
       </div>
       <div class="LoLLinks">
         <h1>News</h1>
-          <li><a href="http://news.yahoo.com/">Yahoo! News</a></li>
-          <li><a href="http://www.huffingtonpost.com/">Huffington Post</a></li>
-          <li><a href="http://www.buzzfeed.com/news">BuzzFeed</a></li>
-          <li><a href="http://www.nytimes.com/">The New York Times</a></li>
-          <li><a href="http://www.latimes.com/">LA Times</a></li>
-          <li><a href="http://www.cnn.com/">CNN Network</a></li>
-          <li><a href="http://www.cbsnews.com/">CBS News</a></li>
-          <li><a href="http://www.usatoday.com/">USAToday</a></li>
-          <li><a href="http://elitedaily.com/">ELITEDAILY</a></li>
-          <li><a href="http://time.com/">TIME</a></li>
-          <li><a href="http://www.thedailybeast.com/">THE DAILY BEAST</a></li>
+          <li><a href="http://www.lolesports.com/en_US/">LoL eSports</a></li>
+          <li><a href="http://www.thescoreesports.com/top_news">The Score eSports</a></li>
+          <li><a href="http://www.lolking.net/">LOLKING</a></li>
+          <li><a href="http://www.mobafire.com/">Moba Fire</a></li>
+          <li><a href="http://www.solomid.net/">SoloMid</a></li>
+          <li><a href="http://www.lolnexus.com/">LoL Nexus</a></li>
+          <li><a href="http://espn.go.com/esports/">ESPN eSports</a></li>
+          <li><a href="http://www.dailydot.com/topics/esports/">The Daily Dot</a></li>
       </div>
     </div>
 
@@ -62,7 +59,7 @@
           </div>
           <div class="QuickInfo">
             <li>
-              <b>User:</b> <%= user.name %> <br>
+              <b>User:</b> <%= link_to user.name, user_path(user[:id]) %> <br>
               <b> IGN: </b> <%= user.ign %> <br>
               <b> Role: </b> <%= user.role %> <br>
               <b> Tier: </b> <%= user.tier_level %>
@@ -74,8 +71,6 @@
       </div>
     </div>
 </div>
-
-<%= image_tag 'http://lol.esportspedia.com/w/images/thumb/7/7a/TSM_Logo.jpg/300px-TSM_Logo.jpg', :size => "30x30" %>
 
 
 

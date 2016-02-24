@@ -81,7 +81,7 @@
           </div>
           <div class="QuickInfo">
             <li>
-              <b>User:</b> <%= user.name %> <br>
+              <b>User:</b> <%= link_to user.name, user_path(user[:id]) %> <br>
               <b> IGN: </b> <%= user.ign %> <br>
               <b> Role: </b> <%= user.role %> <br>
               <b> Tier: </b> <%= user.tier_level %>
