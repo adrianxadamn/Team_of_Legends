@@ -83,6 +83,10 @@ edit.html.erb
     <%= f.label :born_on, "DOB" %>
     <%= f.date_select :born_on, order: [:month, :day, :year], :start_year => 1970 %>
   </div>
+  <div class="field">
+    <%= f.label :profile_image, "Profile Image (Insert Url Link)" %>
+    <%= f.text_field :profile_image %>
+  </div>
 
   <div class="actions"><%= f.submit "Update Account" %></div>
 <% end %>
@@ -92,21 +96,30 @@ edit.html.erb
 
     <div class ="column column-three">
       <div class="recentTeams">
-        <h1> Recent Teams Created </h1>
-        <div class="RecentTeam">
-        </div>
+        <h1>Recent Teams Created</h1>
+
       </div>
       <div class="recentUsers">
         <h1> Recent Active Users </h1>
       <% @users.each do |user| %>
         <div class="RecentUser">
-        <li><b>User:</b> <%= user.name %> <br>
-        <b> Role: </b> <%= user.role %> <br>
-        <b> Tier: </b> <%= user.tier_level %></li>
+          <div class="PictureLeft">
+            <%= image_tag user.profile_image, :size => "70x70" %>
+          </div>
+          <div class="QuickInfo">
+            <li>
+              <b>User:</b> <%= user.name %> <br>
+              <b> IGN: </b> <%= user.ign %> <br>
+              <b> Role: </b> <%= user.role %> <br>
+              <b> Tier: </b> <%= user.tier_level %>
+            </li>
+
+          </div>
         </div>
         <% end %>
       </div>
     </div>
+
 </div>
 
 

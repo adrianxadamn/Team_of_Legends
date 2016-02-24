@@ -61,14 +61,25 @@
         <h1> Recent Active Users </h1>
       <% @users.each do |user| %>
         <div class="RecentUser">
-        <li><b>User:</b> <%= user.name %> <br>
-        <b> Role: </b> <%= user.role %> <br>
-        <b> Tier: </b> <%= user.tier_level %></li>
+          <div class="PictureLeft">
+            <%= image_tag user.profile_image, :size => "70x70" %>
+          </div>
+          <div class="QuickInfo">
+            <li>
+              <b>User:</b> <%= user.name %> <br>
+              <b> IGN: </b> <%= user.ign %> <br>
+              <b> Role: </b> <%= user.role %> <br>
+              <b> Tier: </b> <%= user.tier_level %>
+            </li>
+
+          </div>
         </div>
         <% end %>
       </div>
     </div>
 </div>
+
+<%= image_tag 'http://lol.esportspedia.com/w/images/thumb/7/7a/TSM_Logo.jpg/300px-TSM_Logo.jpg', :size => "30x30" %>
 
 
 

@@ -154,3 +154,7 @@ li {
   padding: 10px 35px;
   background-color: white;
 }
+
+.PictureLeft, .QuickInfo {
+  display:inline-block;
+}
