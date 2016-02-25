@@ -1,10 +1,10 @@
 <div class ="container">
     <div class= "column column-one">
-      <div class="Header">
-        <div class="PictureLeft">
+      <div class="header">
+        <div class="pictureleft">
           <%= image_tag @team.team_image, :size => "70x70" %>
         </div>
-        <div class="QuickInfo">
+        <div class="quickinfo">
           <li>
             <b> Team: </b><%= link_to @team.name, team_path(@team.id) %> <br>
             <b> Owner: </b><%= link_to @team.owner.name, user_path(@team[:user_id]) %> <br>
@@ -13,9 +13,9 @@
           </li>
         </div>
       </div>
-      <div class="LoLLinks">
+      <div class="lollinks">
         <h1>Related Links</h1>
-        <div class="TwoLinkColumn">
+        <div class="twolinkcolumn">
           <div>
           <li><a href="http://www.lolesports.com/en_US/">LoL eSports</a></li>
           <li><a href="http://www.thescoreesports.com/top_news">The Score eSports</a></li>
@@ -34,7 +34,7 @@
 
     <div class= "column column-two">
 
-      <div class="UserInfo">
+      <div class="userinfo">
         <div>
           <b>Team Name:</b> <%= @team.name %>
         </div>
@@ -66,14 +66,14 @@
 
 
     <div class ="column column-three">
-      <div class="recentTeams">
+      <div class="recentteams">
         <h1>Recent Teams Created</h1>
-        <% @recentTeams.each do |team| %>
-        <div class="RecentUser">
-          <div class="PictureLeft">
+        <% @recentteams.each do |team| %>
+        <div class="recentuser">
+          <div class="pictureleft">
         <%= image_tag team.team_image, :size => "70x70" %>
           </div>
-          <div class="QuickInfo">
+          <div class="quickinfo">
           <li>
             <b> Team: </b><%= link_to team.name, team_path(team.id) %> <br>
             <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]) %> <br>
@@ -84,14 +84,14 @@
         </div>
         <% end %>
       </div>
-      <div class="recentUsers">
+      <div class="recentusers">
         <h1> Recent Users Created </h1>
-      <% @recentUsers.each do |user| %>
-        <div class="RecentUser">
-          <div class="PictureLeft">
+      <% @recentusers.each do |user| %>
+        <div class="recentuser">
+          <div class="pictureleft">
             <%= image_tag user.profile_image, :size => "70x70" %>
           </div>
-          <div class="QuickInfo">
+          <div class="quickinfo">
             <li>
               <b>User:</b> <%= link_to user.name, user_path(user[:id]) %> <br>
               <b> IGN: </b> <%= user.ign %> <br>

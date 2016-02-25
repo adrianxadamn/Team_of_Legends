@@ -1,11 +1,11 @@
 <div class ="container">
     <div class= "column column-one">
-      <div class= "Header">
+      <div class= "header">
       <% if current_user %>
-        <div class="PictureLeft">
+        <div class="pictureleft">
         <%= image_tag current_user.profile_image, :size => "70x70" %>
         </div>
-        <div class="QuickInfo">
+        <div class="quickinfo">
           <li>
             <b>User:</b> <%= current_user.name %> <br>
             <b> IGN: </b> <%= current_user.ign %> <br>
@@ -14,12 +14,12 @@
           </li>
         </div>
         <% else %>
-          <img class="Logo" src="/assets/Team_of_Legends_2.jpg" height="90" width="260">
+          <%= image_tag "team_of_legends_2.jpg", height: "90", width: "260", class: "logo" %>
       <% end %>
       </div>
-      <div class="LoLLinks">
+      <div class="lollinks">
         <h1>Related Links</h1>
-        <div class="TwoLinkColumn">
+        <div class="twolinkcolumn">
           <div>
           <li><a href="http://www.lolesports.com/en_US/">LoL eSports</a></li>
           <li><a href="http://www.thescoreesports.com/top_news">The Score eSports</a></li>
@@ -38,16 +38,16 @@
 
     <div class= "column column-two">
      <% if current_user %>
-      <div class="PostBox">
+      <div class="postbox">
         Create a Post!
         <%= form_for @post, url: user_posts_path(current_user.id) do |f| %>
-        <div class="NameAndImage">
+        <div class="nameAndimage">
         <strong>
         <%= f.label current_user.name %> :
         </strong>
         </div>
 
-        <div class="Text">
+        <div class="text">
           <div>
               <%= f.text_area :content, size: "67x5", :maxlength =>140, :placeholder => "Enter Text Here. (Max characters is 140)." %>
           </div>
@@ -57,15 +57,15 @@
       </div>
 
        <% end %>
-      <div class="PostList">
+      <div class="postlist">
         <% @posts.each do |post| %>
-        <div class="Post">
-          <div class="PostImageLeft">
+        <div class="post">
+          <div class="postimageleft">
         <%= image_tag post.user.profile_image, :size => "70x70" %>
           </div>
-          <div class="PostContentRight">
+          <div class="postcontentright">
           <strong> <%= link_to post.user.name, user_path(post[:user_id]) %> </strong> - <%= post.content %>
-          <div class="PathLinksRight">
+          <div class="pathlinksright">
             <%= link_to 'View User', user_path(post[:user_id]) %>
           </div>
         </div>
@@ -78,14 +78,14 @@
     </div>
 
     <div class ="column column-three">
-      <div class="recentTeams">
+      <div class="recentteams">
         <h1>Recent Teams Created</h1>
-      <% @recentTeams.each do |team| %>
-        <div class="RecentUser">
-          <div class="PictureLeft">
+      <% @recentteams.each do |team| %>
+        <div class="recentuser">
+          <div class="pictureleft">
         <%= image_tag team.team_image, :size => "70x70" %>
           </div>
-          <div class="QuickInfo">
+          <div class="quickinfo">
           <li>
             <b> Team: </b><%= link_to team.name, team_path(team.id) %> <br>
             <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]) %> <br>
@@ -96,14 +96,14 @@
         </div>
         <% end %>
       </div>
-      <div class="recentUsers">
+      <div class="recentusers">
         <h1> Recent Users Created </h1>
-      <% @recentUsers.each do |user| %>
-        <div class="RecentUser">
-          <div class="PictureLeft">
+      <% @recentusers.each do |user| %>
+        <div class="recentuser">
+          <div class="pictureleft">
             <%= image_tag user.profile_image, :size => "70x70" %>
           </div>
-          <div class="QuickInfo">
+          <div class="quickinfo">
             <li>
               <b>User:</b> <%= link_to user.name, user_path(user[:id]) %> <br>
               <b> IGN: </b> <%= user.ign %> <br>

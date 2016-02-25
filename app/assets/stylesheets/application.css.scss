@@ -13,14 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
 html, body {
   margin: 0px;
  }
 
 body {
-  background: url("/assets/wallpaper.jpg");
+  background: image-url("wallpaper.jpg");
   background-color: black;
-  background-repeat: repeat-x;
+  background-repeat: repeat-y repeat-x;
   background-size: 100%;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -35,11 +36,11 @@ h1 {
   text-align: center
 }
 
-.TwoLinkColumn {
+.twolinkcolumn {
   display: flex;
 }
 
-.Logo {
+.logo {
   margin-left: 10px;
   margin-top: -10px;
   margin-bottom: -10px;
@@ -114,72 +115,72 @@ a:visited {
   margin-bottom: 20px;
 }
 
-.Header, .LoLLinks, .recentTeams, .recentUsers,
-.UserList, .UserInfo, .Post {
+.header, .lollinks, .recentteams, .recentusers,
+.userlist, .userinfo, .post {
   border: 1px solid black;
   border-radius: 5px;
   background-color: white;
 }
 
-.LoLLinks {
+.lollinks {
   margin-top: 10px;
   padding-bottom:20px;
 }
 
-.LoLLinks li {
+.lollinks li {
   padding-top:10px;
   padding-left:30px;
   padding-botton:10px;
 }
 
-.LoLLinks a {
+.lollinks a {
   text-decoration: none;
 }
 
-.LoLLinks a:hover {
+.lollinks a:hover {
   text-decoration: underline;
 }
 
-.LoLLinks h1 {
+.lollinks h1 {
   font-size: 30px;
 }
 
-.recentTeams h1 {
+.recentteams h1 {
   font-size: 30px;
   text-align: center;
 }
 
-.RecentTeam, .RecentUser {
+.recentteam, .recentuser {
   padding-top:5px;
 }
 
-.recentUsers {
+.recentusers {
   margin-top: 10px;
 }
 
-.UserList, .UserInfo {
+.userlist, .userinfo {
   padding: 10px 35px;
 }
 
-.PictureLeft, .QuickInfo, .QuickInfoRight, .PostImageLeft,
-.PostContentRight {
+.pictureleft, .quickinfo, .quickinforight, .postimageleft,
+.postcontentright {
   display:inline-block;
 }
 
-.Header, .Post, .recentUsers, .recentTeams {
+.header, .post, .recentusers, .recentteams {
   padding: 10px;
 }
 
-.PostList, .PostBox {
+.postlist, .postbox {
   background-color: white;
   border-radius: 5px;
 }
 
-.PostContentRight {
+.postcontentright {
   vertical-align: top;
 }
 
-.PathLinksRight {
+.pathlinksright {
   vertical-align: bottom;
   margin-top: 33px ;
 }

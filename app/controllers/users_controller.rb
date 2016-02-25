@@ -4,30 +4,30 @@ class UsersController < ApplicationController
     @users = User.all.order('created_at DESC')
     @posts = Post.all
     @post = Post.new
-    @recentUsers = User.order('created_at DESC').limit(5)
-     @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentusers = User.order('created_at DESC').limit(5)
+     @recentteams = Team.order('created_at DESC').limit(3)
   end
 
   def new
     @users = User.all
     @user = User.new
-    @recentUsers = User.order('created_at DESC').limit(5)
-     @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentusers = User.order('created_at DESC').limit(5)
+     @recentteams = Team.order('created_at DESC').limit(3)
   end
 
   def show
     @users = User.all
     @user = User.find(params[:id])
     @posts = User.find(params[:id]).posts
-    @recentUsers = User.order('created_at DESC').limit(5)
-     @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentusers = User.order('created_at DESC').limit(5)
+     @recentteams = Team.order('created_at DESC').limit(3)
     # @post = Post.find(params[:id])
   end
 
   def create
     @users = User.all
-    @recentUsers = User.order('created_at DESC').limit(5)
-     @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentusers = User.order('created_at DESC').limit(5)
+     @recentteams = Team.order('created_at DESC').limit(3)
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "You have successfully signed up!"
@@ -38,8 +38,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @recentUsers = User.order('created_at DESC').limit(5)
-     @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentusers = User.order('created_at DESC').limit(5)
+     @recentteams = Team.order('created_at DESC').limit(3)
     @users = User.all
     @user = User.find(params[:id])
     if current_user != @user

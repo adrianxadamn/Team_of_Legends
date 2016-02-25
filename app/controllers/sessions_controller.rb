@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
   def new
     @users = User.all
     @user = User.new
-    @recentUsers = User.order('created_at DESC').limit(5)
-        @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentusers = User.order('created_at DESC').limit(5)
+        @recentteams = Team.order('created_at DESC').limit(3)
   end
 
   def show
@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @recentUsers = User.order('created_at DESC').limit(5)
-    @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentusers = User.order('created_at DESC').limit(5)
+    @recentteams = Team.order('created_at DESC').limit(3)
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id

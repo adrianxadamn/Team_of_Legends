@@ -3,16 +3,16 @@ class PostsController < ApplicationController
     @users = User.all.order('created_at DESC')
     @posts = Post.find(params[:id])
     @post = Post.new
-    @recentUsers = User.order('created_at DESC').limit(5)
-        @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentusers = User.order('created_at DESC').limit(5)
+        @recentteams = Team.order('created_at DESC').limit(3)
   end
 
   def show
     @users = User.all
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-    @recentUsers = User.order('created_at DESC').limit(5)
-        @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentusers = User.order('created_at DESC').limit(5)
+        @recentteams = Team.order('created_at DESC').limit(3)
   end
 
   def new
@@ -34,8 +34,8 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    @recentUsers = User.order('created_at DESC').limit(5)
-    @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentusers = User.order('created_at DESC').limit(5)
+    @recentteams = Team.order('created_at DESC').limit(3)
     @users = User.all
     @user = User.find(params[:user_id])
     # if current_user != @user
