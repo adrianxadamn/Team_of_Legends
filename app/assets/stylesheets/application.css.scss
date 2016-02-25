@@ -18,6 +18,15 @@ html, body {
   margin: 0px;
  }
 
+.links, a {
+  color: darkgoldenrod;
+  text-decoration: underline;
+}
+
+a:hover, .links:hover {
+  color: white
+}
+
 body {
   background: image-url("wallpaper.jpg");
   background-color: black;
@@ -26,6 +35,7 @@ body {
   background-position: center top;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
+  color: darkgoldenrod;
  }
 
 .field, .actions {
@@ -47,19 +57,11 @@ h1 {
   margin-bottom: -10px;
 }
 
-a {
-  text-decoration: none;
-}
-
-a:visited {
-  color: black;
-}
-
 .navbar {
   display: flex;
   height: 45px;
   text-decoration: none;
-  margin: auto 50px;
+  margin: auto 100px
 }
 
 
@@ -68,7 +70,7 @@ a:visited {
 }
 
 .navbar li:visited {
-  color: black;
+  color: darkgoldenrod;
 }
 
 .navbar li:hover {
@@ -77,13 +79,13 @@ a:visited {
 
 .navbar1, .navbar2, .navbar3 {
   padding-left: 0px;
-  text-align: center
 }
 
 .navbar1 {
   flex: 1;
   order: 1;
   margin: auto 50px;
+  text-align: left;
 }
 
 .navbar1 li {
@@ -95,6 +97,7 @@ a:visited {
   order: 2;
   margin-left: 50px;
   margin-right: 50px;
+  text-align: center;
 }
 
 .navbar2 li {
@@ -105,6 +108,7 @@ a:visited {
   // margin-left: 400px;
   order: 3;
   margin: auto 50px;
+  text-align: right
 }
 
 .navbar3 li {
@@ -114,7 +118,6 @@ a:visited {
 li {
   list-style: none;
   text-decoration: none;
-  color: black;
 }
 
 .container {
@@ -145,9 +148,9 @@ li {
 
 .header, .lollinks, .recentteams, .recentusers,
 .userlist, .userinfo, .post, .navbardivs, .postbox, .postlist {
-  border: 1px solid black;
+  border: 1px solid darkgoldenrod;
   border-radius: 5px;
-  background-color: white;
+  background-color: black;
 }
 
 .lollinks {

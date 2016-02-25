@@ -7,8 +7,8 @@
         </div>
         <div class="quickinfo">
           <li>
-            <b>User:</b> <%= current_user.name %> <br>
-            <b> IGN: </b> <%= current_user.ign %> <br>
+            <b>User:</b> <%= link_to current_user.name, current_user, class: "links" %> <br>
+            <b> IGN: </b> <%= link_to current_user.ign, current_user, class: "links" %> <br>
             <b> Role: </b> <%= current_user.role %> <br>
             <b> Tier: </b> <%= current_user.tier_level %>
           </li>
@@ -64,8 +64,8 @@
           </div>
           <div class="quickinfo">
           <li>
-            <b> Team: </b><%= link_to team.name, team_path(team.id) %> <br>
-            <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]) %> <br>
+            <b> Team: </b><%= link_to team.name, team_path(team.id), class: "links" %> <br>
+            <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]), class: "links" %> <br>
             <b> LOC: </b><%= team.location %> <br>
             <b> LAN: </b><%= team.native_language %>
           </li>
@@ -82,8 +82,8 @@
           </div>
           <div class="quickinfo">
             <li>
-              <b>User:</b> <%= link_to user.name, user_path(user[:id]) %> <br>
-              <b> IGN: </b> <%= user.ign %> <br>
+              <b>User:</b> <%= link_to user.name, user_path(user[:id]), class: "links" %> <br>
+              <b> IGN: </b> <%= link_to user.ign, user_path(user[:id]), class: "links" %> <br>
               <b> Role: </b> <%= user.role %> <br>
               <b> Tier: </b> <%= user.tier_level %>
             </li>

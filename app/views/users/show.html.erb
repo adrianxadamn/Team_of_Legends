@@ -6,8 +6,8 @@
         </div>
         <div class="quickinfo">
           <li>
-            <b>User:</b> <%= @user.name %> <br>
-            <b> IGN: </b> <%= @user.ign %> <br>
+            <b>User:</b> <%= link_to @user.name, user_path, class: "links" %> <br>
+            <b> IGN: </b> <%= link_to @user.ign, user_path, class: "links" %> <br>
             <b> Role: </b> <%= @user.role %> <br>
             <b> Tier: </b> <%= @user.tier_level %>
           </li>
@@ -63,8 +63,8 @@
           <b>Description: </b> <%= @user.description %>
         </div>
           <% if current_user == @user %>
-            <%= link_to 'Edit Information', edit_user_path(@user) %>
-            <%= link_to "Delete Account", user_path, method: :delete, data:
+            <%= link_to 'Edit Information', edit_user_path(@user), class: "links" %>
+            <%= link_to "Delete Account", user_path, class: "links", method: :delete, data:
             {confirm: "Are you sure you want to delete your account?"} %>
           <% end %>
       </div>
@@ -77,10 +77,10 @@
           <div class="postcontentright">
           <strong> <%= post.user.name %> </strong> - <%= post.content %>
           <div class="pathlinksright">
-          <%= link_to 'View Post', user_post_path(@user.id, post.id) %>
+          <%= link_to 'View Post', user_post_path(@user.id, post.id), class: "links" %>
           <% if current_user == @user %>
-            <%= link_to 'Edit Post', edit_user_post_path(@user.id, post.id) %>
-            <%= link_to 'Delete Post', user_post_path(@user.id, post.id), method: :delete, data:
+            <%= link_to 'Edit Post', edit_user_post_path(@user.id, post.id), class: "links" %>
+            <%= link_to 'Delete Post', user_post_path(@user.id, post.id), class: "links", method: :delete, data:
             {confirm: "Are you sure you want to delete your post?"} %>
 
 
@@ -105,8 +105,8 @@
           </div>
           <div class="quickinfo">
           <li>
-            <b> Team: </b><%= link_to team.name, team_path(team.id) %> <br>
-            <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]) %> <br>
+            <b> Team: </b><%= link_to team.name, team_path(team.id), class: "links" %> <br>
+            <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]), class: "links" %> <br>
             <b> LOC: </b><%= team.location %> <br>
             <b> LAN: </b><%= team.native_language %>
           </li>
@@ -123,8 +123,8 @@
           </div>
           <div class="quickinfo">
             <li>
-              <b>User:</b> <%= link_to user.name, user_path(user[:id]) %> <br>
-              <b> IGN: </b> <%= user.ign %> <br>
+              <b>User:</b> <%= link_to user.name, user_path(user[:id]), class: "links" %> <br>
+              <b> IGN: </b> <%= link_to user.ign, user_path(user[:id]), class: "links" %> <br>
               <b> Role: </b> <%= user.role %> <br>
               <b> Tier: </b> <%= user.tier_level %>
             </li>
