@@ -59,7 +59,9 @@ a:visited {
   display: flex;
   height: 45px;
   text-decoration: none;
+  margin: auto 50px;
 }
+
 
 .navbar li {
   display: inline-flex;
@@ -75,23 +77,34 @@ a:visited {
 
 .navbar1, .navbar2, .navbar3 {
   padding-left: 0px;
+  text-align: center
 }
 
 .navbar1 {
-  margin-left: 145px;
+  flex: 1;
+  order: 1;
+  margin: auto 50px;
 }
 
 .navbar1 li {
   margin: auto 5px;
 }
 
+.navbar2 {
+  flex: 1;
+  order: 2;
+  margin-left: 50px;
+  margin-right: 50px;
+}
 
 .navbar2 li {
   margin-top: -15px;
-  margin-left: 300px;
 }
 .navbar3 {
-  margin-left: 400px;
+  flex: 1;
+  // margin-left: 400px;
+  order: 3;
+  margin: auto 50px;
 }
 
 .navbar3 li {
@@ -131,7 +144,7 @@ li {
 }
 
 .header, .lollinks, .recentteams, .recentusers,
-.userlist, .userinfo, .post, .navbar, .postbox, .postlist {
+.userlist, .userinfo, .post, .navbardivs, .postbox, .postlist {
   border: 1px solid black;
   border-radius: 5px;
   background-color: white;

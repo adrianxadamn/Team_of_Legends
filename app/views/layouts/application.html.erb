@@ -11,14 +11,10 @@
 <body>
 
 <nav>
-  <div class="navbar">
+  <div class="navbardivs">
+    <div class="navbar">
     <ul class="navbar1">
       <li><%= link_to 'Home', root_path %></li>
-      <% if current_user %>
-      <li>
-      <%= link_to 'Profile', current_user %>
-      </li>
-      <% end %>
       <li><%= link_to 'Users', users_path %></li>
       <li><%= link_to 'Teams', teams_path %></li>
     </ul>
@@ -28,7 +24,7 @@
     <ul class="navbar3">
       <li>
         <% if current_user %>
-          Welcome, <%= current_user.ign %>
+          <%= link_to current_user.ign, current_user %>
           &nbsp;&nbsp;|&nbsp;&nbsp;
           <%= link_to 'Logout', session_path('dummy'), method: :delete %>
         <% else %>
@@ -38,6 +34,7 @@
         <% end %>
       </li>
     </ul>
+    </div>
   </div>
 </nav>
 
