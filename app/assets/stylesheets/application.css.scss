@@ -22,7 +22,8 @@ body {
   background: image-url("wallpaper.jpg");
   background-color: black;
   background-repeat: repeat-y repeat-x;
-  background-size: 100%;
+  background-size: 1800px;
+  background-position: center top;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
  }
@@ -84,6 +85,7 @@ h1 {
 li {
   list-style: none;
   text-decoration: none;
+  color: black;
 }
 
 a:visited {
