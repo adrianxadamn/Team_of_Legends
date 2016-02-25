@@ -10,9 +10,8 @@ class TeamsController < ApplicationController
   def create
     @user = current_user
     @team = Team.new(team_params)
-    @team = @user.posts.new(user_id: current_user.id)
+    @team.owner = @user
     if @team.save
-      flash[:notice] = "You have successfully signed up!"
       redirect_to root_path
     else
       render 'new'
