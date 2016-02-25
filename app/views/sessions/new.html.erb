@@ -19,14 +19,20 @@
       </div>
       <div class="LoLLinks">
         <h1>Related Links</h1>
+        <div class="TwoLinkColumn">
+          <div>
           <li><a href="http://www.lolesports.com/en_US/">LoL eSports</a></li>
           <li><a href="http://www.thescoreesports.com/top_news">The Score eSports</a></li>
           <li><a href="http://www.lolking.net/">LOLKING</a></li>
           <li><a href="http://www.mobafire.com/">Moba Fire</a></li>
+          </div>
+          <div>
           <li><a href="http://www.solomid.net/">SoloMid</a></li>
           <li><a href="http://www.lolnexus.com/">LoL Nexus</a></li>
           <li><a href="http://espn.go.com/esports/">ESPN eSports</a></li>
           <li><a href="http://www.dailydot.com/topics/esports/">The Daily Dot</a></li>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -58,7 +64,7 @@
           </div>
           <div class="QuickInfo">
           <li>
-            <b> Team: </b><%= team.name %> <br>
+            <b> Team: </b><%= link_to team.name, team_path(team.id) %> <br>
             <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]) %> <br>
             <b> LOC: </b><%= team.location %> <br>
             <b> LAN: </b><%= team.native_language %>

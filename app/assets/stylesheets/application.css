@@ -13,14 +13,31 @@
  *= require_tree .
  *= require_self
  */
- html, body {
+html, body {
   margin: 0px;
  }
 
- body {
+body {
   background: url("/assets/wallpaper.jpg");
+  background-color: black;
+  background-repeat: repeat-x;
   background-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
  }
+
+.field, .actions {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center
+}
+
+.TwoLinkColumn {
+  display: flex;
+}
 
 .Logo {
   margin-left: 10px;
@@ -52,11 +69,11 @@
 
 .navbar2 li {
   margin-top: -15px;
-  margin-left: 50px;
+  margin-left: 300px;
 }
 
 .navbar3 {
-  margin-left: 80px;
+  margin-left: 400px;
 }
 
 .navbar3 li {
@@ -65,8 +82,12 @@
 
 li {
   list-style: none;
+  text-decoration: none;
 }
 
+a:visited {
+  color: black;
+}
 .container {
   display:flex;
   margin: 20px 100px auto 100px;
@@ -102,12 +123,12 @@ li {
 
 .LoLLinks {
   margin-top: 10px;
-  padding-bottom:30px;
+  padding-bottom:20px;
 }
 
 .LoLLinks li {
   padding-top:10px;
-  padding-left:20px;
+  padding-left:30px;
   padding-botton:10px;
 }
 
@@ -120,14 +141,12 @@ li {
 }
 
 .LoLLinks h1 {
-  text-decoration: underline;
   font-size: 30px;
 }
 
 .recentTeams h1 {
   font-size: 30px;
   text-align: center;
-  text-decoration: underline;
 }
 
 .RecentTeam, .RecentUser {

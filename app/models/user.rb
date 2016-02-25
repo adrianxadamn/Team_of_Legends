@@ -9,5 +9,4 @@ class User < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true, length: {in: 4..15}
   validates :ign, presence: true, uniqueness: true, length: {in: 4..15}
   validates :email, presence: true, uniqueness: true, length: {in: 4..30}
-
 end
