@@ -17,6 +17,7 @@
     </div>
 
     <div class= "column column-two">
+    <% if current_user  %>
       <div class= "PostBox">
         <h3>Create a Team: </h3> <br>
           <%= form_for @team do |f| %>
@@ -56,6 +57,7 @@
           <div class="actions"><%= f.submit "Create Team" %></div>
           <% end %>
       </div>
+      <% end %>
       <div class="UserList">
         <h3> List of Teams: </h3><br>
         <% @teams.each do |team| %>
@@ -65,8 +67,8 @@
           </div>
           <div class="QuickInfo">
             <li>
-              <b> Team: </b><%= team.name %> <br>
-              <b> Owner: </b><%= team.owner.name %> <br>
+              <b> Team: </b><%= link_to team.name, team_path(team.id) %> <br>
+              <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]) %> <br>
               <b> Location: </b><%= team.location %> <br>
               <b> Language: </b><%= team.native_language %>
             </li>

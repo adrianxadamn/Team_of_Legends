@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
     @users = User.all.order('created_at DESC')
     @posts = Post.all
     @recentUsers = User.order('created_at DESC').limit(5)
-    @team = Team.new
+
     @teams = Team.all
   end
 
@@ -12,12 +12,17 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     @team.owner = @user
     if @team.save
-      redirect_to root_path
+      redirect_to teams_path
     else
       render 'new'
     end
   end
 
+  def show
+    @teams = Team.all
+    @team = Team.find(params[:id])
+    @recentUsers = User.order('created_at DESC').limit(5)
+  end
 
 
 
@@ -27,7 +32,7 @@ class TeamsController < ApplicationController
     params.require(:team).permit(
       :name,
       :location,
-      :native_langauge,
+      :native_language,
       :members,
       :user_id,
       :team_image,
