@@ -3,7 +3,8 @@ class TeamsController < ApplicationController
     @users = User.all.order('created_at DESC')
     @posts = Post.all
     @recentUsers = User.order('created_at DESC').limit(5)
-
+    @recentTeams = Team.order('created_at DESC').limit(3)
+    @team = Team.new
     @teams = Team.all
   end
 
@@ -22,8 +23,11 @@ class TeamsController < ApplicationController
     @teams = Team.all
     @team = Team.find(params[:id])
     @recentUsers = User.order('created_at DESC').limit(5)
+    @recentTeams = Team.order('created_at DESC').limit(3)
   end
 
+  def edit
+  end
 
 
   private

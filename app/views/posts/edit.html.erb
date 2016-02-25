@@ -51,7 +51,21 @@
     <div class ="column column-three">
       <div class="recentTeams">
         <h1>Recent Teams Created</h1>
-
+      <% @recentTeams.each do |team| %>
+        <div class="RecentUser">
+          <div class="PictureLeft">
+        <%= image_tag team.team_image, :size => "70x70" %>
+          </div>
+          <div class="QuickInfo">
+          <li>
+            <b> Team: </b><%= team.name %> <br>
+            <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]) %> <br>
+            <b> LOC: </b><%= team.location %> <br>
+            <b> LAN: </b><%= team.native_language %>
+          </li>
+        </div>
+        </div>
+        <% end %>
       </div>
       <div class="recentUsers">
         <h1> Recent Users Created </h1>
