@@ -84,14 +84,17 @@ li {
   border-radius: 5px;
   margin-right: 10px;
   flex: 2;
+  margin-bottom: 20px;
 }
 
 .column-three {
   order: 3;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-.Header {
+.Header, .LoLLinks, .recentTeams, .recentUsers,
+.UserList, .UserInfo, .Post {
   border: 1px solid black;
   border-radius: 5px;
   background-color: white;
@@ -99,9 +102,6 @@ li {
 
 .LoLLinks {
   margin-top: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: white;
   padding-bottom:30px;
 }
 
@@ -124,68 +124,39 @@ li {
   font-size: 30px;
 }
 
-.recentTeams {
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: white;
-}
-
 .recentTeams h1 {
   font-size: 30px;
   text-align: center;
   text-decoration: underline;
 }
 
-.RecentTeam {
+.RecentTeam, .RecentUser {
   padding-top:5px;
 }
 
 .recentUsers {
   margin-top: 10px;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: white;
-}
-
-.RecentUser {
-  padding-top: 5px;
 }
 
 .UserList, .UserInfo {
-  border: 1px solid black;
-  border-radius: 5px;
   padding: 10px 35px;
-  background-color: white;
 }
 
-.PictureLeft, .QuickInfo, .QuickInfoRight {
+.PictureLeft, .QuickInfo, .QuickInfoRight, .PostImageLeft,
+.PostContentRight {
   display:inline-block;
 }
 
-.Header {
+.Header, .Post, .recentUsers, .recentTeams {
   padding: 10px;
 }
 
 .PostList, .PostBox {
   background-color: white;
-  border-radius:5px;
-}
-
-.Post {
-  border: 1px solid black;
-  border-radius:5px;
-  padding: 10px;
-  background-color: white;
-}
-
-.PostImageLeft {
-  display: inline-block;
+  border-radius: 5px;
 }
 
 .PostContentRight {
-  display: inline-block;
   vertical-align: top;
 }
 
