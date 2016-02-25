@@ -6,7 +6,7 @@
         </div>
         <div class="QuickInfo">
           <li>
-            <b>User:</b> <%= @user.name %> <br>
+            <b>User:</b> <%= link_to @user.name, user_path(@user[:id]) %> <br>
             <b> IGN: </b> <%= @user.ign %> <br>
             <b> Role: </b> <%= @user.role %> <br>
             <b> Tier: </b> <%= @user.tier_level %>
@@ -34,15 +34,16 @@
         </div>
         <div class="PostContentRight">
           <div>
-          <strong> <%= @post.user.name %> </strong> - <%= @post.content %>
+          <strong> <%= link_to @post.user.name, user_path(@user[:id]) %> </strong> - <%= @post.content %>
           </div>
-          <div>
 
+          <div class ="PathLinksRight">
+           <% if current_user == @user %>
             <%= link_to 'Edit Post', edit_user_post_path %>
             <%= link_to "Delete Post", user_post_path, method: :delete, data:
             {confirm: "Are you sure you want to delete your post?"} %>
-
-          </div>
+           <% end %>
+           </div>
         </div>
         </div>
     </div>

@@ -40,6 +40,21 @@ class PostsController < ApplicationController
     # end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path
+  end
+
+  def update
+    if @post.update_attribute(params.require(:post).permit(
+        :content
+    ))
+      redirect_to current_user
+    else
+      render :edit
+    end
+  end
 
 private
     # Implement Strong Params

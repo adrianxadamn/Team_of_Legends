@@ -183,6 +183,11 @@ li {
   vertical-align: top;
 }
 
+.PathLinksRight {
+  vertical-align: bottom;
+  margin-top: 33px ;
+}
+
 /*.column-two {
   background-color: white;
 }*/

@@ -4,7 +4,6 @@ get '/home' => 'homepage#index'
 
 resources :teams
 
-
 resources :users do
   resources :posts, only: [:index, :new, :create, :destroy, :show, :edit]
 end

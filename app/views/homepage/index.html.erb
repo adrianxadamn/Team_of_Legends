@@ -44,10 +44,12 @@
         <%= image_tag post.user.profile_image, :size => "70x70" %>
           </div>
           <div class="PostContentRight">
-          <strong> <%= post.user.name %> </strong> - <%= post.content %>
+          <strong> <%= link_to post.user.name, user_path(post[:user_id]) %> </strong> - <%= post.content %>
+          <div class="PathLinksRight">
+            <%= link_to 'View User', user_path(post[:user_id]) %>
+          </div>
         </div>
 
-            <%= link_to 'View User', user_path(post[:user_id]) %>
 
 
         </div>
