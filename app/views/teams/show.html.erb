@@ -6,7 +6,7 @@
         </div>
         <div class="QuickInfo">
           <li>
-            <b> Team: </b><%= @team.name %> <br>
+            <b> Team: </b><%= link_to @team.name, team_path(@team.id) %> <br>
             <b> Owner: </b><%= link_to @team.owner.name, user_path(@team[:user_id]) %> <br>
             <b> LOC: </b><%= @team.location %> <br>
             <b> LAN: </b><%= @team.native_language %>
@@ -50,6 +50,11 @@
         <div>
           <b>Description: </b> <%= @team.description %>
         </div>
+
+            <%= link_to 'Edit Team Information', edit_team_path(@team) %>
+            <%= link_to "Delete Team", team_path, method: :delete, data:
+            {confirm: "Are you sure you want to delete your Team?"} %>
+
         </div>
     </div>
 
@@ -64,7 +69,7 @@
           </div>
           <div class="QuickInfo">
           <li>
-            <b> Team: </b><%= team.name %> <br>
+            <b> Team: </b><%= link_to team.name, team_path(team.id) %> <br>
             <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]) %> <br>
             <b> LOC: </b><%= team.location %> <br>
             <b> LAN: </b><%= team.native_language %>

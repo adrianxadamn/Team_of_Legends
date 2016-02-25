@@ -1,7 +1,21 @@
 <div class ="container">
     <div class= "column column-one">
       <div class= "Header">
-        <h1>The User Info Goes Here</h1>
+      <% if current_user %>
+        <div class="PictureLeft">
+        <%= image_tag current_user.profile_image, :size => "70x70" %>
+        </div>
+        <div class="QuickInfo">
+          <li>
+            <b>User:</b> <%= current_user.name %> <br>
+            <b> IGN: </b> <%= current_user.ign %> <br>
+            <b> Role: </b> <%= current_user.role %> <br>
+            <b> Tier: </b> <%= current_user.tier_level %>
+          </li>
+        </div>
+        <% else %>
+          <img class="Logo" src="/assets/Team_of_Legends_2.jpg" height="90" width="260">
+      <% end %>
       </div>
       <div class="LoLLinks">
         <h1>Related Links</h1>
@@ -37,7 +51,21 @@
     <div class ="column column-three">
       <div class="recentTeams">
         <h1>Recent Teams Created</h1>
-
+      <% @recentTeams.each do |team| %>
+        <div class="RecentUser">
+          <div class="PictureLeft">
+        <%= image_tag team.team_image, :size => "70x70" %>
+          </div>
+          <div class="QuickInfo">
+          <li>
+            <b> Team: </b><%= team.name %> <br>
+            <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]) %> <br>
+            <b> LOC: </b><%= team.location %> <br>
+            <b> LAN: </b><%= team.native_language %>
+          </li>
+        </div>
+        </div>
+        <% end %>
       </div>
       <div class="recentUsers">
         <h1> Recent Users Created </h1>

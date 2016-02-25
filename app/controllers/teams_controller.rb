@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
     @recentUsers = User.order('created_at DESC').limit(5)
     @recentTeams = Team.order('created_at DESC').limit(3)
     @team = Team.new
-    @teams = Team.all
+    @teams = Team.order('created_at DESC')
   end
 
   def create
@@ -27,6 +27,30 @@ class TeamsController < ApplicationController
   end
 
   def edit
+    @teams = Team.all
+    @team = Team.find(params[:id])
+    @recentUsers = User.order('created_at DESC').limit(5)
+    @recentTeams = Team.order('created_at DESC').limit(3)
+  end
+
+  def update
+    @teams = Team.all
+    @team = Team.find(params[:id])
+     if @team.update_attributes(params.require(:team).permit(
+      :name,
+      :location,
+      :native_language,
+      :members,
+      :user_id,
+      :team_image,
+      :established_on,
+      :description,
+      :team_abbreviation
+    ))
+      redirect_to teams_path
+    else
+      render :edit
+    end
   end
 
 

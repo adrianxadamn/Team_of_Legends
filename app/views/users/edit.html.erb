@@ -1,7 +1,17 @@
 <div class ="container">
     <div class= "column column-one">
       <div class= "Header">
-        <h1>The User Info Goes Here</h1>
+        <div class="PictureLeft">
+        <%= image_tag @user.profile_image, :size => "70x70" %>
+        </div>
+        <div class="QuickInfo">
+          <li>
+            <b>User:</b> <%= @user.name %> <br>
+            <b> IGN: </b> <%= @user.ign %> <br>
+            <b> Role: </b> <%= @user.role %> <br>
+            <b> Tier: </b> <%= @user.tier_level %>
+          </li>
+        </div>
       </div>
       <div class="LoLLinks">
         <h1>Related Links</h1>

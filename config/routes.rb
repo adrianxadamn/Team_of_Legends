@@ -3,9 +3,8 @@ root 'homepage#index'
 get '/home' => 'homepage#index'
 
 resources :teams
-
 resources :users do
-  resources :posts, only: [:index, :new, :create, :destroy, :show, :edit]
+  resources :posts
 end
 
 resources :sessions, only: [:new, :show, :create, :destroy, :edit ]

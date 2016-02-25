@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @recentUsers = User.order('created_at DESC').limit(5)
-        @recentTeams = Team.order('created_at DESC').limit(3)
+    @recentTeams = Team.order('created_at DESC').limit(3)
     @users = User.all
     @user = User.find(params[:user_id])
     # if current_user != @user
@@ -50,10 +50,14 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update_attribute(params.require(:post).permit(
-        :content
-    ))
-      redirect_to current_user
+    # doesn't even reach here
+
+
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+    if @user.post.update_attribute(params.require(:post).permit(
+        :content))
+      redirect_to root_path
     else
       render :edit
     end
