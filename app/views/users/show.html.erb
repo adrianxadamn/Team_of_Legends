@@ -71,12 +71,15 @@
       <div class="postlist">
         <% @posts.each do |post| %>
         <div class="post">
+          <div class="postandcontent">
           <div class="postimageleft">
         <%= image_tag post.user.profile_image, :size => "70x70" %>
           </div>
           <div class="postcontentright">
           <strong> <%= link_to post.user.name, user_path %> </strong> - <%= post.content %>
-          <div class="pathlinksright">
+          </div>
+          </div>
+          <div class="pathlinksbottom">
           <%= link_to 'View Post', user_post_path(@user.id, post.id), class: "links" %>
           Posted at: <%= post.created_at.strftime("%m-%d-%Y") %>
           <% if current_user == @user || current_user.try(:admin?) %>
@@ -87,7 +90,6 @@
 
           <% end %>
           </div>
-        </div>
 
         </div>
         <% end %>

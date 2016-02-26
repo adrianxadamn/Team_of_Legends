@@ -217,11 +217,16 @@ li {
   padding: 10px;
 }
 
-.postcontentright {
-  vertical-align: top;
+.postandcontent {
+  display: flex
 }
 
-.pathlinksright {
+.postcontentright {
+  vertical-align: top;
+  padding-left: 5px
+}
+
+.pathlinksbottom {
   vertical-align: bottom;
-  margin-top: 33px ;
+  text-align: left;
 }

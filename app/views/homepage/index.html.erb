@@ -71,17 +71,18 @@
       <div class="postlist">
         <% @posts.each do |post| %>
         <div class="post">
-          <div class="postimageleft">
-        <%= image_tag post.user.profile_image, :size => "70x70" %>
+          <div class="postandcontent">
+            <div class="postimageleft">
+             <%= image_tag post.user.profile_image, :size => "70x70" %>
+             </div>
+            <div class="postcontentright">
+              <strong> <%= link_to post.user.name, user_path(post[:user_id]), class: "links" %> </strong> - <%= post.content %>
+            </div>
           </div>
-          <div class="postcontentright">
-          <strong> <%= link_to post.user.name, user_path(post[:user_id]), class: "links" %> </strong> - <%= post.content %>
-
-          <div class="pathlinksright">
-            <%= link_to 'View User', user_path(post[:user_id]), class: "links" %>
-             Posted at: <%= post.created_at.strftime("%m-%d-%Y") %>
+          <div class="pathlinksbottom">
+          <%= link_to 'View User', user_path(post[:user_id]), class: "links" %>
+          Posted at: <%= post.created_at.strftime("%m-%d-%Y") %>
           </div>
-        </div>
         </div>
         <% end %>
       </div>
