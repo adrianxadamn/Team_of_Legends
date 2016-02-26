@@ -6,8 +6,8 @@
         </div>
         <div class="quickinfo">
           <li>
-            <b>User:</b> <%= @user.name %> <br>
-            <b> IGN: </b> <%= @user.ign %> <br>
+            <b>User:</b> <%= link_to @user.name, current_user %> <br>
+            <b> IGN: </b> <%= link_to @user.ign, "http://lolprofile.net/summoner/na/#{@user.ign}", class: "links"  %> <br>
             <b> Role: </b> <%= @user.role %> <br>
             <b> Tier: </b> <%= @user.tier_level %>
           </li>
