@@ -15,7 +15,7 @@ If there is time, I would like to implement a feature where users can create loc
 #####Technologies used:
 <li> Ruby
 <li> Ruby on Rails
-
+<li> Heroku
 
 ##Table of Contents
 <ol>

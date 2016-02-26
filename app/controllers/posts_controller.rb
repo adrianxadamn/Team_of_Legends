@@ -54,13 +54,9 @@ class PostsController < ApplicationController
   end
 
   def update
-    # doesn't even reach here
-
-
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-    if @user.post.update_attribute(params.require(:post).permit(
-        :content))
+    if @post.update(post_params)
       redirect_to root_path
     else
       render :edit
