@@ -65,7 +65,6 @@
         <%= f.submit "Post" %>
         <% end %>
       </div>
-
        <% end %>
       <div class="postlist">
         <% @posts.each do |post| %>
@@ -75,13 +74,10 @@
           </div>
           <div class="postcontentright">
           <strong> <%= link_to post.user.name, user_path(post[:user_id]), class: "links" %> </strong> - <%= post.content %>
-          <div class="pathlinksright">
-            <%= link_to 'View User', user_path(post[:user_id]), class: "links" %>
+            <div class="pathlinksright">
+              <%= link_to 'View User', user_path(post[:user_id]), class: "links" %>
+            </div>
           </div>
-        </div>
-
-
-
         </div>
         <% end %>
       </div>

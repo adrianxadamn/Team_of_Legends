@@ -57,25 +57,25 @@
     <div class ="column column-three">
       <div class="recentteams">
         <h1>Recent Teams Created</h1>
-      <% @recentteams.each do |team| %>
+        <% @recentteams.each do |team| %>
         <div class="recentuser">
           <div class="pictureleft">
-        <%= image_tag team.team_image, :size => "70x70" %>
+          <%= image_tag team.team_image, :size => "70x70" %>
           </div>
           <div class="quickinfo">
-          <li>
-            <b> Team: </b><%= link_to team.name, team_path(team.id), class: "links" %> <br>
-            <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]), class: "links" %> <br>
-            <b> LOC: </b><%= team.location %> <br>
-            <b> LAN: </b><%= team.native_language %>
-          </li>
-        </div>
+            <li>
+              <b> Team: </b><%= link_to team.name, team_path(team.id), class: "links" %> <br>
+              <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]), class: "links" %> <br>
+              <b> LOC: </b><%= team.location %> <br>
+              <b> LAN: </b><%= team.native_language %>
+            </li>
+          </div>
         </div>
         <% end %>
       </div>
       <div class="recentusers">
         <h1> Recent Users Created </h1>
-      <% @recentusers.each do |user| %>
+        <% @recentusers.each do |user| %>
         <div class="recentuser">
           <div class="pictureleft">
             <%= image_tag user.profile_image, :size => "70x70" %>
@@ -87,7 +87,6 @@
               <b> Role: </b> <%= user.role %> <br>
               <b> Tier: </b> <%= user.tier_level %>
             </li>
-
           </div>
         </div>
         <% end %>

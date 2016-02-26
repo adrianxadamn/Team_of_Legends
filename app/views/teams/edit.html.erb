@@ -33,8 +33,7 @@
     </div>
 
     <div class= "column column-two">
-
-<% if current_user  %>
+    <% if current_user  %>
       <div class= "postbox">
         Update your Team: <br><br>
           <%= form_for @team do |f| %>
@@ -111,7 +110,6 @@
               <b> Role: </b> <%= user.role %> <br>
               <b> Tier: </b> <%= user.tier_level %>
             </li>
-
           </div>
         </div>
         <% end %>

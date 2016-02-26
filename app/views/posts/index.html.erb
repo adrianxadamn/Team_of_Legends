@@ -37,13 +37,9 @@
 
     <div class= "column column-two">
       <div class= "userlist">
-
-<% @posts.each do |post| %>
-
-<%= post.content %> <%= post.user.name %>
-
-<% end %>
-
+      <% @posts.each do |post| %>
+        <%= post.content %> <%= post.user.name %>
+      <% end %>
       </div>
     </div>
 

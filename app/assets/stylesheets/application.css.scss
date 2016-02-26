@@ -18,6 +18,10 @@ html, body {
   margin: 0px;
  }
 
+ b, h1 {
+  color: white
+ }
+
 .links, a {
   color: darkgoldenrod;
   text-decoration: underline;
@@ -179,7 +183,8 @@ li {
 }
 
 .postbox {
-  text-align: center
+  text-align: center;
+  padding: 10px
 }
 
 .recentteams h1 {
