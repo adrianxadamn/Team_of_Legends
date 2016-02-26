@@ -37,9 +37,13 @@ As a twitter user, I wanted to build my app with a twitter layout while mixing i
 
 -
 ####<b>3. <u>How to Use</u></b>
-1. Create an account by signing up to be authorized to post and/or create a team.
+Step 1. Create an account by signing up to be authorized to post and/or create a team.
 
-![Team of Legends image](app/assets/images/league_of_legends_howto.png)
+![Team of Legends image](app/assets/images/league_of_legends_howto.png) 
+
+Step 2. Post! 
+
+![Team of Legends image](app/assets/images/league_of_legends_howto2.png)
 
 ####<b>4. <u>Unsolved Problems/Future Features to Implement</u></b>
 
