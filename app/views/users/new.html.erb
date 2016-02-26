@@ -8,7 +8,7 @@
         <div class="quickinfo">
           <li>
             <b>User:</b> <%= link_to current_user.name, current_user, class: "links" %> <br>
-            <b> IGN: </b> <%= link_to current_user.ign, current_user, class: "links" %> <br>
+            <b> IGN: </b> <%= link_to current_user.ign, "http://lolprofile.net/summoner/na/#{user.ign}", class: "links" %> <br>
             <b> Role: </b> <%= current_user.role %> <br>
             <b> Tier: </b> <%= current_user.tier_level %>
           </li>
@@ -135,7 +135,7 @@
           <div class="quickinfo">
             <li>
               <b>User:</b> <%= link_to user.name, user_path(user[:id]), class: "links" %> <br>
-              <b> IGN: </b> <%= link_to user.ign, user_path(user[:id]), class: "links" %> <br>
+              <b> IGN: </b> <%= link_to user.ign, "http://lolprofile.net/summoner/na/#{user.ign}", class: "links" %> <br>
               <b> Role: </b> <%= user.role %> <br>
               <b> Tier: </b> <%= user.tier_level %>
             </li>

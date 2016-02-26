@@ -14,6 +14,8 @@ Users will be able to create an account and will have to provide some important 
 #####Technologies used:
 <li> Ruby
 <li> Ruby on Rails
+<li> HTML
+<li> CSS
 <li> Heroku
 
 ##Table of Contents
@@ -47,7 +49,7 @@ Step 2. Post!
 
 ####<b>4. <u>Unsolved Problems/Future Features to Implement</u></b>
 
-Due to time restraints, I wasn't able to prevent a User from creating more than one team. He/She should only belong to one team. Also, I wasn't able to implement a feature where users can join a team or a user can invite a user to join their team.
+Due to time constraints, I wasn't able to prevent a User from creating more than one team. He/She should only belong to one team. Also, I wasn't able to implement a feature where users can join a team or a user can invite a user to join their team.
 
 When I have time, I would also like to implement a feature where users can create local tournaments and only a certain amount of teams can enter the tournament based on their overall skill level as a team and/or the tournament's format type. 
 
