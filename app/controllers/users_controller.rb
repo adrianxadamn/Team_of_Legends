@@ -49,6 +49,8 @@ class UsersController < ApplicationController
 
 
   def update
+    @recentusers = User.order('created_at DESC').limit(5)
+    @recentteams = Team.order('created_at DESC').limit(3)
     @users = User.all
     @user = User.find(params[:id])
      if @user.update_attributes(params.require(:user).permit(
