@@ -10,13 +10,13 @@ class HomepageController < ApplicationController
   def new
     @user = User.new
     @recentusers = User.order('created_at DESC').limit(5)
-     @recentteams = Team.order('created_at DESC').limit(3)
+    @recentteams = Team.order('created_at DESC').limit(3)
   end
 
   def show
     @user = User.find(params[:id])
     @recentusers = User.order('created_at DESC').limit(5)
-     @recentteams = Team.order('created_at DESC').limit(3)
+    @recentteams = Team.order('created_at DESC').limit(3)
   end
 
   def create

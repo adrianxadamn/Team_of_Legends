@@ -9,7 +9,10 @@ class TeamsController < ApplicationController
   end
 
   def create
+    @recentusers = User.order('created_at DESC').limit(5)
+    @recentteams = Team.order('created_at DESC').limit(3)
     @user = current_user
+    @teams = Team.all
     @team = Team.new(team_params)
     @team.owner = @user
     if @team.save
@@ -31,6 +34,9 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     @recentusers = User.order('created_at DESC').limit(5)
     @recentteams = Team.order('created_at DESC').limit(3)
+    if current_user.id != @team.user_id
+      redirect_to teams_path
+    end
   end
 
   def update
@@ -53,6 +59,11 @@ class TeamsController < ApplicationController
     end
   end
 
+  def destroy
+    @team = Team.find(params[:id])
+    @team.destroy
+    redirect_to teams_path
+  end
 
   private
   # Implement Strong Params

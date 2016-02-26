@@ -14,7 +14,7 @@
           </li>
         </div>
         <% else %>
-          <%= image_tag "team_of_legends_2.jpg", height: "90", width: "260", class: "logo" %>
+          <%= image_tag "team_of_legends.jpg", height: "90", width: "260", class: "logo" %>
       <% end %>
       </div>
       <div class="lollinks">
@@ -42,7 +42,7 @@
         <%= form_for @user do |f| %>
           <% if @user.errors.any? %>
             <div class="error_messages">
-              <h2>Form is invalid</h2>
+              <h2>User is invalid</h2>
               <ul>
                 <% for message in @user.errors.full_messages %>
                   <li><%= message %></li>

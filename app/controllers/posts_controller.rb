@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     @posts = Post.find(params[:id])
     @post = Post.new
     @recentusers = User.order('created_at DESC').limit(5)
-        @recentteams = Team.order('created_at DESC').limit(3)
+    @recentteams = Team.order('created_at DESC').limit(3)
   end
 
   def show
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @recentusers = User.order('created_at DESC').limit(5)
-        @recentteams = Team.order('created_at DESC').limit(3)
+    @recentteams = Team.order('created_at DESC').limit(3)
   end
 
   def new
@@ -21,7 +21,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    @recentusers = User.order('created_at DESC').limit(5)
+    @recentteams = Team.order('created_at DESC').limit(3)
     @user = current_user
+    @posts = Post.all
     @post = @user.posts.new(user_id: current_user.id,
                             content: params[:post][:content])
     if @post.save
@@ -29,6 +32,7 @@ class PostsController < ApplicationController
       redirect_to root_path
     else
       render :new
+      flash[:notice] = "Your post cannot be blank!"
     end
   end
 
@@ -38,9 +42,9 @@ class PostsController < ApplicationController
     @recentteams = Team.order('created_at DESC').limit(3)
     @users = User.all
     @user = User.find(params[:user_id])
-    # if current_user != @user
-    #   redirect_to root_path
-    # end
+    if current_user != @user
+      redirect_to root_path
+    end
   end
 
   def destroy

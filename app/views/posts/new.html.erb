@@ -37,14 +37,20 @@
     </div>
 
     <div class= "column column-two">
-    <div class= "userlist">
-
-<h1>Edit Post</h1>
-
-<% if current_user %>
+     <% if current_user %>
       <div class="postbox">
-        Edit a Post!
+        Create a Post!
         <%= form_for @post, url: user_posts_path(current_user.id) do |f| %>
+          <% if @post.errors.any? %>
+            <div class="error_messages">
+              <h2>Post is invalid</h2>
+              <ul>
+                <% for message in @post.errors.full_messages %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
         <div class="nameAndimage">
         <strong>
         <%= f.label current_user.name %> :
@@ -56,16 +62,29 @@
               <%= f.text_area :content, size: "67x5", :maxlength =>140, :placeholder => "Enter Text Here. (Max characters is 140)." %>
           </div>
         </div>
-        <%= f.submit "Submit" %>
+        <%= f.submit "Post" %>
         <% end %>
       </div>
 
        <% end %>
+      <div class="postlist">
+        <% @posts.each do |post| %>
+        <div class="post">
+          <div class="postimageleft">
+        <%= image_tag post.user.profile_image, :size => "70x70" %>
+          </div>
+          <div class="postcontentright">
+          <strong> <%= link_to post.user.name, user_path(post[:user_id]), class: "links" %> </strong> - <%= post.content %>
+          <div class="pathlinksright">
+            <%= link_to 'View User', user_path(post[:user_id]), class: "links" %>
+          </div>
+        </div>
 
 
 
-
-    </div>
+        </div>
+        <% end %>
+      </div>
     </div>
 
     <div class ="column column-three">
@@ -97,7 +116,7 @@
           <div class="quickinfo">
             <li>
               <b>User:</b> <%= link_to user.name, user_path(user[:id]), class: "links" %> <br>
-              <b> IGN: </b> <%= link_to user.ign, user_path(user[:id]), class: "links" %> <br>
+              <b> IGN: </b> <%= link_to user.ign, user_path(user[:id]), class: "links"  %> <br>
               <b> Role: </b> <%= user.role %> <br>
               <b> Tier: </b> <%= user.tier_level %>
             </li>
@@ -107,6 +126,6 @@
         <% end %>
       </div>
     </div>
-
 </div>
+
 

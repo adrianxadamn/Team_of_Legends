@@ -1,0 +1,151 @@
+<div class ="container">
+    <div class= "column column-one">
+      <div class= "header">
+      <% if current_user %>
+        <div class="pictureleft">
+        <%= image_tag current_user.profile_image, :size => "70x70" %>
+        </div>
+        <div class="quickinfo">
+          <li>
+            <b>User:</b> <%= link_to current_user.name, current_user, class: "links" %> <br>
+            <b> IGN: </b> <%= link_to current_user.ign, current_user, class: "links" %> <br>
+            <b> Role: </b> <%= current_user.role %> <br>
+            <b> Tier: </b> <%= current_user.tier_level %>
+          </li>
+        </div>
+        <% else %>
+          <%= image_tag "team_of_legends.jpg", height: "90", width: "260", class: "logo" %>
+      <% end %>
+      </div>
+      <div class="lollinks">
+        <h1>Related Links</h1>
+        <div class="twolinkcolumn">
+          <div>
+          <li><a href="http://www.lolesports.com/en_US/">LoL eSports</a></li>
+          <li><a href="http://www.thescoreesports.com/top_news">The Score eSports</a></li>
+          <li><a href="http://www.lolking.net/">LOLKING</a></li>
+          <li><a href="http://www.mobafire.com/">Moba Fire</a></li>
+          </div>
+          <div>
+          <li><a href="http://www.solomid.net/">SoloMid</a></li>
+          <li><a href="http://www.lolnexus.com/">LoL Nexus</a></li>
+          <li><a href="http://espn.go.com/esports/">ESPN eSports</a></li>
+          <li><a href="http://www.dailydot.com/topics/esports/">The Daily Dot</a></li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class= "column column-two">
+    <% if current_user  %>
+      <div class= "postbox">
+        Create a Team: <br><br>
+          <%= form_for @team do |f| %>
+            <% if @team.errors.any? %>
+              <div class="error_messages">
+                <h2>Team is invalid</h2>
+                <ul>
+                <% for message in @team.errors.full_messages %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+          <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field">
+            <%= f.label :team_abbreviation %>
+            <%= f.text_field :team_abbreviation %>
+          </div>
+          <div class="field">
+            <%= f.label :location %>
+            <%= f.text_field :location %>
+          </div>
+          <div class="field">
+            <%= f.label :native_language, "Native Language" %>
+            <%= f.text_field :native_language %>
+          </div>
+          <div class="field">
+            <%= f.label :members %>
+            <%= f.text_field :members %>
+          </div>
+          <div class="field">
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+          </div>
+          <div class="field">
+            <%= f.label :established_on, "Est." %>
+            <%= f.date_select :established_on, order: [:month, :day, :year], :start_year => 1970 %>
+          </div>
+          <div class="field">
+            <%= f.label :team_image, "Team Image (Insert Url Link)" %>
+            <%= f.text_field :team_image %>
+          </div>
+
+          <div class="actions"><%= f.submit "Create Team" %></div>
+          <% end %>
+      </div>
+      <% end %>
+      <div class="userlist">
+        <h3> List of Teams: </h3><br>
+        <% @teams.each do |team| %>
+        <div class="recentuser">
+          <div class="pictureleft">
+          <%= image_tag team.team_image, :size => "70x70" %>
+          </div>
+          <div class="quickinfo">
+            <li>
+              <b> Team: </b><%= link_to team.name, team_path(team.id), class: "links" %> <br>
+              <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]), class: "links" %> <br>
+              <b> Location: </b><%= team.location %> <br>
+              <b> Language: </b><%= team.native_language %>
+            </li>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class ="column column-three">
+      <div class="recentteams">
+        <h1>Recent Teams Created</h1>
+        <% @recentteams.each do |team| %>
+        <div class="recentuser">
+          <div class="pictureleft">
+        <%= image_tag team.team_image, :size => "70x70" %>
+          </div>
+          <div class="quickinfo">
+          <li>
+            <b> Team: </b><%= link_to team.name, team_path(team.id), class: "links" %> <br>
+            <b> Owner: </b><%= link_to team.owner.name, user_path(team[:user_id]), class: "links" %> <br>
+            <b> LOC: </b><%= team.location %> <br>
+            <b> LAN: </b><%= team.native_language %>
+          </li>
+        </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="recentusers">
+        <h1> Recent Users Created </h1>
+      <% @recentusers.each do |user| %>
+        <div class="recentuser">
+          <div class="pictureleft">
+            <%= image_tag user.profile_image, :size => "70x70" %>
+          </div>
+          <div class="quickinfo">
+            <li>
+              <b>User:</b> <%= link_to user.name, user_path(user[:id]), class: "links" %> <br>
+              <b> IGN: </b> <%= link_to user.ign, user_path(user[:id]), class: "links" %> <br>
+              <b> Role: </b> <%= user.role %> <br>
+              <b> Tier: </b> <%= user.tier_level %>
+            </li>
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>

@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     @users = User.all
     @user = User.new
     @recentusers = User.order('created_at DESC').limit(5)
-        @recentteams = Team.order('created_at DESC').limit(3)
+    @recentteams = Team.order('created_at DESC').limit(3)
   end
 
   def show
