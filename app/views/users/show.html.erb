@@ -62,7 +62,7 @@
         <div>
           <b>Description: </b> <%= @user.description %>
         </div>
-          <% if current_user == @user %>
+          <% if current_user == @user || current_user.try(:admin?)  %>
             <%= link_to 'Edit Information', edit_user_path(@user), class: "links" %>
             <%= link_to "Delete Account", user_path, class: "links", method: :delete, data:
             {confirm: "Are you sure you want to delete your account?"} %>
@@ -79,7 +79,7 @@
           <div class="pathlinksright">
           <%= link_to 'View Post', user_post_path(@user.id, post.id), class: "links" %>
           Posted at: <%= post.created_at.strftime("%m-%d-%Y") %>
-          <% if current_user == @user || current_user.admin? %>
+          <% if current_user == @user || current_user.try(:admin?) %>
             <%= link_to 'Edit Post', edit_user_post_path(@user.id, post.id), class: "links" %>
             <%= link_to 'Delete Post', user_post_path(@user.id, post.id), class: "links", method: :delete, data:
             {confirm: "Are you sure you want to delete your post?"} %>

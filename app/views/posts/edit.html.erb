@@ -39,7 +39,7 @@
     <div class= "column column-two">
       <div class= "userlist">
         <h1>Edit Post</h1>
-        <% if current_user || current_user.admin? %>
+        <% if current_user || current_user.try(:admin?) %>
         <div class="postbox">
           Edit a Post!
           <%= form_for @post, url: user_posts_path(current_user.id) + "/" + @post.id.to_s do |f| %>

@@ -45,7 +45,7 @@
 
           <div class ="pathlinksright">
           Posted at: <%= @post.created_at.strftime("%m-%d-%Y") %>
-          <% if current_user == @user || current_user.admin? %>
+          <% if current_user == @user || current_user.try(:admin?) %>
             <%= link_to 'Edit Post', edit_user_post_path, class: "links" %>
             <%= link_to "Delete Post", user_post_path, class: "links", method: :delete, data:
             {confirm: "Are you sure you want to delete your post?"} %>

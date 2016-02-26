@@ -34,7 +34,7 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     @recentusers = User.order('created_at DESC').limit(5)
     @recentteams = Team.order('created_at DESC').limit(3)
-    if current_user.id != @team.user_id || current_user.admin?
+    if current_user.id != @team.user_id || current_user.try(:admin?)
       redirect_to teams_path
     end
   end
