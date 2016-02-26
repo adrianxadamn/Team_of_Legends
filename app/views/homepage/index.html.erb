@@ -60,6 +60,7 @@
         <div class="text">
           <div>
               <%= f.text_area :content, size: "67x5", :maxlength =>140, :placeholder => "Enter Text Here. (Max characters is 140)." %>
+
           </div>
         </div>
         <%= f.submit "Post" %>
@@ -75,8 +76,10 @@
           </div>
           <div class="postcontentright">
           <strong> <%= link_to post.user.name, user_path(post[:user_id]), class: "links" %> </strong> - <%= post.content %>
+
           <div class="pathlinksright">
             <%= link_to 'View User', user_path(post[:user_id]), class: "links" %>
+             Posted at: <%= post.created_at.strftime("%m-%d-%Y") %>
           </div>
         </div>
 

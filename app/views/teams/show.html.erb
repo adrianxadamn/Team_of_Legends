@@ -55,7 +55,7 @@
         <div>
           <b>Description: </b> <%= @team.description %>
         </div>
-            <% if current_user.id == @team.user_id %>
+            <% if current_user.id == @team.user_id || current_user.admin? %>
               <%= link_to 'Edit Team Information', edit_team_path(@team), class: "links" %>
               <%= link_to "Delete Team", team_path, class: "links", method: :delete, data:
               {confirm: "Are you sure you want to delete your Team?"} %>

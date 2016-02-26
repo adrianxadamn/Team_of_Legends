@@ -75,11 +75,11 @@
         <%= image_tag post.user.profile_image, :size => "70x70" %>
           </div>
           <div class="postcontentright">
-          <strong> <%= post.user.name %> </strong> - <%= post.content %>
+          <strong> <%= link_to post.user.name, user_path %> </strong> - <%= post.content %>
           <div class="pathlinksright">
           <%= link_to 'View Post', user_post_path(@user.id, post.id), class: "links" %>
-          <% if current_user == @user %>
-            <%= link_to 'Edit Post', edit_user_post_path(@user.id, post.id), class: "links" %>
+          Posted at: <%= post.created_at.strftime("%m-%d-%Y") %>
+          <% if current_user == @user || current_user.admin? %>
             <%= link_to 'Delete Post', user_post_path(@user.id, post.id), class: "links", method: :delete, data:
             {confirm: "Are you sure you want to delete your post?"} %>
 

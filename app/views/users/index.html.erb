@@ -47,7 +47,7 @@
           <div class="quickinfo">
             <li>
               <b>User:</b> <%= link_to user.name, user_path(user[:id]) %> <br>
-              <b>IGN: </b> <%= user.ign %> <br>
+              <b>IGN: </b> <%= link_to user.ign, user_path(user[:id]) %> <br>
               <b>Role: </b> <%= user.role %> <br>
               <b>Tier: </b> <%= user.tier_level %>
             </li>
