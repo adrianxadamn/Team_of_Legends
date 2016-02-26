@@ -40,6 +40,8 @@ class TeamsController < ApplicationController
   end
 
   def update
+    @recentusers = User.order('created_at DESC').limit(5)
+    @recentteams = Team.order('created_at DESC').limit(3)
     @teams = Team.all
     @team = Team.find(params[:id])
      if @team.update_attributes(params.require(:team).permit(
