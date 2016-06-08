@@ -22,7 +22,7 @@ class HomepageController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "You have successfully signed up!"
+      # flash[:notice] = "You have successfully signed up!"
       redirect_to root_path
     else
       render 'new'
@@ -67,7 +67,7 @@ class HomepageController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     session[:user_id] = nil
-    flash[:success] = "You have been logged out"
+    # flash[:success] = "You have been logged out"
     redirect_to root_path
   end
 

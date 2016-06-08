@@ -28,11 +28,10 @@ class PostsController < ApplicationController
     @post = @user.posts.new(user_id: current_user.id,
                             content: params[:post][:content])
     if @post.save
-      flash[:notice] = "You've made that flippin' comment!"
       redirect_to root_path
     else
       render :new
-      flash[:notice] = "Your post cannot be blank!"
+      # flash[:notice] = "Your post cannot be blank!"
     end
   end
 
